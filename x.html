@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cores.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <title>Cerimonialista Virtual®</title>
+</head>
+<body class="body animated fadeInLeft">
+  <!-- Topo-->
+   <nav  class="navbar navbar-expand-lg fixed-top bg-warning navbar-light m-0 px-3">
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-list mr-2"></i>Cadastro
+        </a>
+        <li class="dropdown-submenu">
+          <a class="py-2 dropdown-item dropdown-toggle  border-bottom text-roxa font-italic font-weight-bold txtMenuDrop"
+         href="#" type="button" id="dropdownSubMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-address-book mr-2"></i></i>Seus Eventos
+        </a>
+          <ul class="dropdown-menu  bg-warning">
+            <li>
+              <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="home.html">
+                <i class="fas fa-plus-square mr-2"></i>Criar Evento
+            </a>
+            </li>
+            <li>
+              <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="casamento.html">
+              <i class="fas fa-cogs mr-2"></i>Gerenciar Evento
+            </a>
+            </li>
+          </ul>
+        </li>
+          <!--  <a class="dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          </a> -->
+
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-people-carry mr-2"></i>Fornecedores
+        </a>
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-question-circle mr-2"></i>Duvidas
+        </a>
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="index.html">
+          <i class="fas fa-sign-out-alt mr-2"></i>Sair
+        </a>
+      </div>
+    </div>
+      <ul class="ml-auto nav mr-3">
+        <li class="nav-item mr-2 text-roxa font-italic font-weight-bold ">
+          Bem Vindo!
+        </li>
+        <li class="nav-item text-roxa font-italic font-weight-bold ">
+          <span id="nomeUsuario"></span>
+        </li>
+      </ul>
+      <img class="animated pulseAlter" height="35px" src="assets/cerimonialista_virtual.png">
+    </div>
+    </nav>
+    <!-- end Topo-->
+    
+    <!-- afastaTopo-->
+    <div id="afastaTopoHome" class="container bg-ligth"></div>
+    <!-- end afastaTopo-->
+    
+    <!-- ! Evento-->
+    <div class="row btn-roxa-opacite text-light py-3">
+      <h5 class="m-auto"> <i class="animated fadeInDownInfinite fas fa-angle-double-down mr-3"></i>Gerenciador de Eventos <i class="animated fadeInDownInfinite fas fa-angle-double-down ml-2"></i></h5>
+    </div>
+    <!-- ! Buttons -->
+    <div class="container pt-1 text-center">
+      <div class="container">
+        
+      </div>
+      <div class="jumbotron btn-roxa-opacite pt-4 mb-1">
+        <div class="col-lg-8 m-auto">
+          <h4 class="text-light font-italic my-3 text-center">Meus Eventos.</h4> 
+          <div class="card text-center">
+            <div class="card-header">
+            </div>
+            <div class="card-body text-roxa">
+              <h5 class="card-title ">Casamento</h5>
+              <p class="card-text">
+                Da Ana Claudia Barros com o João Pedro Lima
+              </p>
+              <p> Data: 12/08/2020</p>
+              <a href="#" class="btn btn-roxa-opacite text-light">Gerenciar<i class="ml-2 fas fa-cogs mr-2"></i></a>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ! end Buttons-->
+    
+  <!-- Footer -->
+  <div id="footer" class="row bg-warning text-center px-2 shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5 class="pb-1">Redes Sociais</h5>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/facebook.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/instagram.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/whatsapp.png"></a>
+          <a class="text-roxa" href="#"><img height="30px" src="assets/twitter.png"></a>
+        </div>
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5>Central de Atendimento</h5>
+          <a class="text-roxa" href="#">Fale Conosco  |</a>
+          <a class="text-roxa" href="#">Trabalhe Conosco  |</a>
+          <a class="text-roxa" href="#">Pagamentos</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row border-top pt-3 mt-4 px-4">
+      <p class="text-roxa mt-2 ">
+        Copyright Cerimonialista Virtual | Todos os direitos reservados. | É proibida a reprodução do conteúdo desta página em qualquer meio de comunicação, eletrônico ou impresso, sem autorização escrita do Cerimonialista Virtual.
+      </p>
+    </div>
+  </div>
+  <!-- end Footer -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+  <!-- Imports-->
+  <script src="js/firebase.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/casamento.js"></script>
+  <script src="js/gerenciador.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<body>
+</html>

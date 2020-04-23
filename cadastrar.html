@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cores.css">
+
+  <title>Cerimonialista Virtual®</title>
+</head>
+<body class="body animated fadeInLeft">
+  <!-- Topo-->
+  <div  class="row bg-warning fixed-top shadow animated bounceInDown">
+    <div  class="container">
+      <nav  class="navbar navbar-expand-lg navbar-light gb-light m-0">
+        <a class="navbar-brand mb-0" href="index.html"><img class="img-logo animated pulseAlter" 
+          src="assets/cerimonialista_virtual.png"></a>
+        <button class="navbar-toggler bg-light animated pulseAlter" type="button" data-toggle="collapse" 
+        data-target="#navbarSite">
+          <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSite">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+              <a class="nav-link animated pulseAlter" id="txtLinkNav" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link animated pulseAlter" id="txtLinkNav" href="#quemsomos">Quem Somos</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a id="navDrop" id="txtLinkNav" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                <span id="txtLinkNav">Login</span></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item badge badge-pill btn-roxa" href="entrar.html">Entrar</a>
+                <a class="dropdown-item badge badge-pill btn-roxa" href="cadastrar.html">Cadastre-se</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a id="navDrop" id="txtLinkNav" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                <span id="txtLinkNav">Social</span></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item badge badge-pill btn-roxa" href="#">Instagram</a>
+                <a class="dropdown-item badge badge-pill btn-roxa" href="#">FaceBook</a>
+                <a class="dropdown-item badge badge-pill btn-roxa" href="#">Twiter</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div><!--end Container-->
+  </div>
+  <!-- end Topo-->
+
+  <!-- afastaTopo-->
+  <div id="afastaTopo" class="container bg-ligth"></div>
+  <!-- end afastaTopo-->
+
+  <!-- ! Login-->
+  <section class="px-2">
+    <div class="row btn-roxa-opacite  py-5"> </div>
+    <div class="row" id="cadastrar">
+      <div class="col-lg-1 btn-roxa-opacite px-2"> </div>
+      <div class="col-lg-10 px-5 py-5 bg-light rounded">
+        <div class="row">
+          <div class="col-lg-4 bg-light"></div>
+          <div class="col-lg-4 px-5 bg-light border rounded text-center">
+            <h3 class="text-roxa mt-4"> Cadastre-se </h3>
+            <form method="post" class="form-group">
+              <input class="form-control my-2 text-roxa" type="text" maxlength="11" id="txtCelular" placeholder="Numero do Celular">
+              <input class="form-control my-2 text-roxa" type="text" maxlength="20" id="txtNome" placeholder="Nome Completo">
+              <input class="form-control my-2 text-roxa" type="text" maxlength="11"  id="txtUsuario" placeholder="Usuario">
+              <input class="form-control text-roxa" type="password" maxlength="11" id="txtSenha" placeholder="Senha">
+              <button id="btnCadastrar" class="btn btn-roxa btn-lg btn-block mt-4 mb-4">Cadastrar</button>
+              <span class="">Tem uma conta? <a class="text-roxa" href="entrar.html">Conecte-se</a></span>
+            </form>
+          </div>
+          <div class="col-lg-4 bg-light"></div>
+        </div>
+      </div>
+      <div class="col-lg-1 btn-roxa-opacite px-2"> </div>
+    </div>
+    <div class="row btn-roxa-opacite px-3 py-5"> </div>
+  </section>
+  <!-- ! end Login-->
+    
+  <!-- Footer -->
+  <div id="footer" class="row bg-warning text-center px-2 shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5 class="pb-1">Redes Sociais</h5>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/facebook.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/instagram.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/whatsapp.png"></a>
+          <a class="text-roxa" href="#"><img height="30px" src="assets/twitter.png"></a>
+        </div>
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5>Central de Atendimento</h5>
+          <a class="text-roxa" href="#">Fale Conosco  |</a>
+          <a class="text-roxa" href="#">Trabalhe Conosco  |</a>
+          <a class="text-roxa" href="#">Pagamentos</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row border-top pt-3 mt-4 px-4">
+      <p class="text-roxa mt-2 ">
+        Copyright Cerimonialista Virtual | Todos os direitos reservados. | É proibida a reprodução do conteúdo desta página em qualquer meio de comunicação, eletrônico ou impresso, sem autorização escrita do Cerimonialista Virtual.
+      </p>
+    </div>
+  </div>
+  <!-- end Footer -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+  <!-- Imports-->
+  <script src="js/firebase.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/cadastrar.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<body>
+</html>

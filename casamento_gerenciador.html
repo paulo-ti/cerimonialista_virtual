@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cores.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <title>Cerimonialista Virtual®</title>
+</head>
+<body class="body animated fadeInLeft">
+  <!-- Topo-->
+   <nav  class="navbar navbar-expand-lg fixed-top bg-warning navbar-light m-0 px-3">
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-list mr-2"></i>Cadastro
+        </a>
+        <li class="dropdown-submenu">
+          <a class="py-2 dropdown-item dropdown-toggle  border-bottom text-roxa font-italic font-weight-bold txtMenuDrop"
+         href="#" type="button" id="dropdownSubMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-address-book mr-2"></i></i>Seus Eventos
+        </a>
+          <ul class="dropdown-menu  bg-warning">
+            <li>
+              <button id="criarEvento" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
+                <i class="fas fa-plus-square mr-2"></i>Criar Evento
+            </button>
+            </li>
+            <li>
+              <button id="gerenciarEvento" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
+              <i class="fas fa-cogs mr-2"></i>Gerenciar Evento
+            </button>
+            </li>
+          </ul>
+        </li>
+          <!--  <a class="dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          </a> -->
+
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-people-carry mr-2"></i>Fornecedores
+        </a>
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-question-circle mr-2"></i>Duvidas
+        </a>
+        <a class=" py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="index.html">
+          <i class="fas fa-sign-out-alt mr-2"></i>Sair
+        </a>
+      </div>
+    </div>
+      <ul class="ml-auto nav mr-3">
+        <li class="nav-item mr-2 text-roxa font-italic font-weight-bold ">
+          Bem Vindo!
+        </li>
+        <li class="nav-item text-roxa font-italic font-weight-bold ">
+          <span id="nomeUsuario"></span>
+        </li>
+      </ul>
+      <img class="animated pulseAlter" height="35px" src="assets/cerimonialista_virtual.png">
+    </div>
+   </nav>
+    <!-- end Topo-->
+    
+    <!-- afastaTopo-->
+    <div id="afastaTopoHome" class="container bg-ligth"></div>
+    <button id="btnCasamento" type="button" class="d-none mb-1 btn btn-warning btn-sm btn-block text-roxa font-italic font-weight-bold txtMenuDrop mr-1"></button>
+    <!-- end afastaTopo-->
+       <!-- ! Menu-->
+      <div class="row btn-roxa-opacite text-light py-2">
+        <div class="container">
+          <h5 class="font-italic text-center mt-2"> Gerenciador. 
+            <a href="#menuGerenciador" class="text-light" data-toggle="collapse">
+            <i class="ml-2 fas fa-cogs mr-2"></i>
+            <i class="mr-2 fas fa-long-arrow-alt-left animated slideOutLeftInfinite"></i>
+          </a>
+          </h5>
+          <div id="menuGerenciador" class="collapse container col-lg-8 text-center">
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#checkList"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                CheckList
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Agenda"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Agenda
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Contratos"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Contratos
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Lista"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                Lista de Convidados
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Playlist"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                Playlist
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Inspiracoes"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Inspirações
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Parceiros"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Parceiros
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Cronograma"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                Cronograma
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Financeiro"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Financeiro
+              </button>
+              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Observacoes"
+              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
+                Observações
+              </button>
+              
+        </div>
+        </div>
+      </div>
+
+      <!-- ! Cards -->
+      <div class="pt-1 text-center">
+        <div class="col-lg-8 m-auto jumbotron pt-3 btn-roxa-opacite text-light">
+
+          <!--! CheckList  -->
+          <div class="mt-1 col-lg-8 m-auto" id="checkList">
+            <div class="jumbotron pt-4 text-roxa">
+              <h4 class="border-bottom pb-1 mb-2">CheckList</h4>
+              <ul class="mt-2 nav flex-column border-bottom pb-2">
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Fotos"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Fotos <i class="fas fa-camera"></i>
+                  </button>
+                  <div id="Fotos" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Igreja"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Igreja <i class="fas fa-church"></i>
+                  </button>
+                  <div id="Igreja" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Celebrante"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Celebrante <i class="fas fa-user"></i>
+                  </button>
+                  <div id="Celebrante" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#decoracao"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Decoração <i class="fas fa-cut"></i>
+                  </button>
+                  <div id="decoracao" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#iluminacao"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Iluminação <i class="fas fa-lightbulb"></i>
+                  </button>
+                  <div id="iluminacao" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Buffet"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Buffet <i class="fas fa-utensils"></i>
+                  </button>
+                  <div id="Buffet" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Trajes"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Trajes <i class="fas fa-tshirt"></i>
+                  </button>
+                  <div id="Trajes" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Filmagem"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Filmagem <i class="fas fa-video"></i>
+                  </button>
+                  <div id="Filmagem" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#casados"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Bem Casados <i class="fas fa-cookie-bite"></i>
+                  </button>
+                  <div id="casados" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Banda"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Banda / Dj <i class="fas fa-drum"></i>
+                  </button>
+                  <div id="Banda" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Bolo"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Bolo <i class="fas fa-cheese"></i>
+                  </button>
+                  <div id="Bolo" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Convites"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Convites <i class="fas fa-envelope-open"></i>
+                  </button>
+                  <div id="Convites" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <button type="button" data-toggle="collapse" data-target="#Bebidas"
+                  class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
+                  Bebidas Alcoolicas <i class="fas fa-cocktail"></i>
+                  </button>
+                  <div id="Bebidas" class="mt-1 collapse">
+                    <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2"> 
+                        <option value="" disabled selected> Forma de pagamento </option> 
+                        <option value="a vista">Pagamento a vista</option> 
+                        <option value="a vista">Pagamento em 1x</option> 
+                        <option value="a vista">Pagamento em 3x</option> 
+                        <option value="a vista">Pagamento em 5x</option> 
+                      </select>
+                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
+                      <input id="dataContrato" type="date" 
+                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop ">Salvar </button>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+           </div> 
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Agenda">
+            <div class="jumbotron pt-4 text-roxa">Agenda</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Contratos">
+           <div class="jumbotron pt-4 text-roxa">Contratos</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Lista">
+           <div class="jumbotron pt-4 text-roxa">Lista CConvidados</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Playlist">
+           <div class="jumbotron pt-4 text-roxa">Playlist</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Inspiracoes">
+           <div class="jumbotron pt-4 text-roxa">Inspirações</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Parceiros">
+           <div class="jumbotron pt-4 text-roxa">Parceiros</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Cronograma">
+           <div class="jumbotron pt-4 text-roxa">Cronograma</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Financeiro">
+           <div class="jumbotron pt-4 text-roxa">Financeiro</div>
+          </div>
+
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Observacoes">
+           <div class="jumbotron pt-4 text-roxa">Observações</div>
+          </div>
+        </div>
+      </div>
+    
+  <!-- Footer -->
+  <div id="footer" class="row bg-warning text-center mt-2 px-2 shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5 class="pb-1">Redes Sociais</h5>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/facebook.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/instagram.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/whatsapp.png"></a>
+          <a class="text-roxa" href="#"><img height="30px" src="assets/twitter.png"></a>
+        </div>
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5>Central de Atendimento</h5>
+          <a class="text-roxa" href="#">Fale Conosco  |</a>
+          <a class="text-roxa" href="#">Trabalhe Conosco  |</a>
+          <a class="text-roxa" href="#">Pagamentos</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row border-top pt-3 mt-4 px-4">
+      <p class="text-roxa mt-2 ">
+        Copyright Cerimonialista Virtual | Todos os direitos reservados. | É proibida a reprodução do conteúdo desta página em qualquer meio de comunicação, eletrônico ou impresso, sem autorização escrita do Cerimonialista Virtual.
+      </p>
+    </div>
+  </div>
+  <!-- end Footer -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+  <!-- Imports-->
+  <script src="js/firebase.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/home.js"></script>
+   <script src="js/casamento.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<body>
+</html>
