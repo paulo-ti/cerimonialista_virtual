@@ -30,9 +30,10 @@
         estado: uEstado,
         cidade: uCidade,
         numeroConvidados: uNumeroConvidados,
-        usuario: url_atual[1]
+        usuario: url_atual[1],
+        idEvento: url_atual[1]+'?'+uDataCasamento
       });
-      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html");
+      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+url_atual[1]);
       document.location.reload(true);
     }
   }
