@@ -24,78 +24,37 @@
   }
   
   //!Evento de Logar
-  $btnEntrar.addEventListener('click' , btnBuscaUsuario);
-
-  function btnBuscaUsuario(e){
+  btnEntrar.addEventListener('click', (e) => {
+    alert("entyou");
     e.preventDefault();
-    var uUsuario = email.value;
-    var uSenha = senha.value;
-    var dados = [];
-
-    function testaCampo(){
-      pintaCampo($usuario);
-        pintaCampo($senha);
-      if(uUsuario == "" || uSenha == ""){
-        return true;
-      }else{
-        return false;
-      }
+    if (testaCampo( email, password )) {
+      firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+        .then(data => {
+          console.log(data);
+          console.log("logado");
+        })
+        .catch(err => {
+          console.error(err);
+        });
     }
+  }, false);
 
-    function pintaCampo(campo){
-      if(campo.value === ""){
-        campo.style.border = "1px solid red";
-      }else{
-        campo.style.border = "1px solid purple";
-      }
+  function testaCampo(){
+    pintaCampo(email);
+      pintaCampo(password);
+    if(email.value == "" || password.value == ""){
+      return false;
+    }else{
+      return true;
     }
-
-    function checaDados(arr){
-      var x = 0;
-      var y = [];
-      var z = [];
-      var erro = recuperaTag('erroLogin');
-      var check = false;
-      while(arr.length > x){
-        y += arr[x]+",";
-         x++;
-      }
-      z = y.split(",");
-      z.pop();
-      x = 0;
-      while(z.length > x){
-        
-        if(z[x] === uUsuario && z[x+1] === uSenha){
-          usuarioLogado = z[x]; 
-          window.history.pushState("object or string", "Title", "/home.html?"+usuarioLogado);
-          document.location.reload(true);
-          return check = true;
-        }
-        x++;
-      }
-      if(!check){
-        email.style.border = "1px solid red";
-        senha.style.border = "1px solid red";
-        erro.classList.remove("d-none");
-        
-      }
-
-    };
-
-    function buscaUsuario(pUsuario , pSenha){
-      query.once("value").then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-           var key = childSnapshot.key;
-           var childData = childSnapshot.val();
-           dados.push([childData.usuario,childData.senha]);
-       });
-       checaDados(dados);
-     });
-    }
-      
-      if(!testaCampo()){
-        buscaUsuario(uUsuario , uSenha);
-      }
-    
-
   }
+
+  function pintaCampo(campo){
+    if(campo.value === ""){
+      campo.style.border = "1px solid red";
+    }else{
+      campo.style.border = "1px solid purple";
+    }
+  }
+
+    

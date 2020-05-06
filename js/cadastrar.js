@@ -30,22 +30,14 @@
     }
   }
 
-  async function registerUser(email, password) {
-    try {
-      const register = await firebase.auth().createUserWithEmailAndPassword(email, password);
-      return register;
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   // Evento de Cadastro
   registerBtn.addEventListener('click', (e) => {
     alert("entyou");
     e.preventDefault();
     if (testaCampo( email, completeName, username, password )) {
-      registerUser(email.value, password.value)
+      firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
         .then(data => {
+          console.log("cadastrado");
           console.log(data);
         })
         .catch(err => {
