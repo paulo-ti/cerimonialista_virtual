@@ -1,91 +1,59 @@
 
   'use strict'
 //! Referencia do FireBase
-var query = firebase.database().ref("UsuarioNovo").orderByKey();  
-var usuarioLogado;
-  function recuperaTag(tag){
-    return document.getElementById(tag)
-  };
+  var query = firebase.database().ref("UsuarioNovo").orderByKey();  
+  var usuarioLogado;
   
-  var $usuario = recuperaTag('lUsuario');
-  var $senha = recuperaTag('lSenha');
-  var $btnEntrar = recuperaTag('btnEntrar');
+  const email = document.querySelector('#lEmail');
+  const password = document.querySelector('#lSenha');
+  const btnEntrar = document.querySelector('#btnEntrar');
+
+  function paintField(field) {
+    const { value: fieldValue } = field;
+
+    field.border = `1px solid ${(fieldValue === '') ? 'red' : 'purple'}`;
+  }
+
+  function validateFields({ email,password }) {
+    const fields = [email, password];
+
+    const fieldsValue = fields.map(field => field.value);
+    fieldsValue.forEach(fieldValue => { paintField(fieldValue) });
+
+    return !fieldsValue.includes('');
+  }
   
   //!Evento de Logar
-  $btnEntrar.addEventListener('click' , btnBuscaUsuario);
-
-  function btnBuscaUsuario(e){
+  btnEntrar.addEventListener('click', (e) => {
     e.preventDefault();
-    var uUsuario = $usuario.value;
-    var uSenha = $senha.value;
-    var dados = [];
-
-    function testaCampo(){
-      if(uUsuario == "" || uSenha == ""){
-        pintaCampo($usuario);
-        pintaCampo($senha);
-        return true;
-      }else{
-        pintaCampo($usuario);
-        pintaCampo($senha);
-        return false;
-      }
+    if (testaCampo( email, password )) {
+      firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+        .then(data => {
+          console.log(data);
+          window.location.href = "home.html";
+        })
+        .catch(err => {
+          alert(err.message);
+        });
     }
+  }, false);
 
-    function pintaCampo(campo){
-      if(campo.value === ""){
-        campo.style.border = "1px solid red";
-      }else{
-        campo.style.border = "1px solid purple";
-      }
+  function testaCampo(){
+    pintaCampo(email);
+      pintaCampo(password);
+    if(email.value == "" || password.value == ""){
+      return false;
+    }else{
+      return true;
     }
-
-    function checaDados(arr){
-      var x = 0;
-      var y = [];
-      var z = [];
-      var erro = recuperaTag('erroLogin');
-      var check = false;
-      while(arr.length > x){
-        y += arr[x]+",";
-         x++;
-      }
-      z = y.split(",");
-      z.pop();
-      x = 0;
-      while(z.length > x){
-        
-        if(z[x] === uUsuario && z[x+1] === uSenha){
-          usuarioLogado = z[x]; 
-          window.history.pushState("object or string", "Title", "/home.html?"+usuarioLogado);
-          document.location.reload(true);
-          return check = true;
-        }
-        x++;
-      }
-      if(!check){
-        $usuario.style.border = "1px solid red";
-        $senha.style.border = "1px solid red";
-        erro.classList.remove("d-none");
-        
-      }
-
-    };
-
-    function buscaUsuario(pUsuario , pSenha){
-      query.once("value").then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-           var key = childSnapshot.key;
-           var childData = childSnapshot.val();
-           dados.push([childData.usuario,childData.senha]);
-       });
-       checaDados(dados);
-     });
-    }
-      
-      if(!testaCampo()){
-        buscaUsuario(uUsuario , uSenha);
-      }
-    
-
   }
+
+  function pintaCampo(campo){
+    if(campo.value === ""){
+      campo.style.border = "1px solid red";
+    }else{
+      campo.style.border = "1px solid purple";
+    }
+  }
+
+    
