@@ -36,8 +36,6 @@
     if (testaCampo( email, completeName, username, password )) {
       firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
         .then(data => {
-          window.history.pushState("object or string", "Title", "/home.html?"+uUsuario);
-          document.location.reload(true);
           window.location.href = "home.html";
           console.log(data);
         })
