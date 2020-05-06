@@ -1,7 +1,7 @@
 
   'use strict'
 //! Referencia do FireBase
-  var query = firebase.database().ref("UsuarioNovo").orderByKey();  
+  const query = firebase.database().ref("UsuarioNovo").orderByKey();  
   var usuarioLogado;
   
   const email = document.querySelector('#lEmail');
