@@ -25,16 +25,15 @@
   
   //!Evento de Logar
   btnEntrar.addEventListener('click', (e) => {
-    alert("entyou");
     e.preventDefault();
     if (testaCampo( email, password )) {
       firebase.auth().signInWithEmailAndPassword(email.value, password.value)
         .then(data => {
           console.log(data);
-          console.log("logado");
+          window.location.href = "home.html";
         })
         .catch(err => {
-          console.error(err);
+          alert(err.message);
         });
     }
   }, false);
