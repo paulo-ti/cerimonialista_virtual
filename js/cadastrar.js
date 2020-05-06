@@ -8,19 +8,26 @@
   const password = document.querySelector('#txtSenha');
   const registerBtn = document.querySelector('#btnCadastrar');
 
-  function paintField(field) {
-    const { value: fieldValue } = field;
-
-    field.border = `1px solid ${(fieldValue === '') ? 'red' : 'purple'}`;
+  function pintaCampo(campo) {
+    if (campo.value === "") {
+      campo.style.border = "1px solid red";
+    } else {
+      campo.style.border = "1px solid purple";
+    }
   }
 
-  function validateFields({ email, completeName, username, password }) {
-    const fields = [email, completeName, username, password];
-
-    const fieldsValue = fields.map(field => field.value);
-    fieldsValue.forEach(fieldValue => { paintField(fieldValue) });
-
-    return !fieldsValue.includes('');
+  function testaCampo( email, completeName, username, password ) {
+      pintaCampo(email);
+      pintaCampo(completeName);
+      pintaCampo(username);
+      pintaCampo(password);
+    if (email.value == "" || completeName.value == "" || username.value == "" || password.value == "") {
+      console.log(email);
+      return false;
+    } else {
+      console.log(password);
+      return true;
+    }
   }
 
   async function registerUser(email, password) {
@@ -34,10 +41,9 @@
 
   // Evento de Cadastro
   registerBtn.addEventListener('click', (e) => {
+    alert("entyou");
     e.preventDefault();
-
-    console.log('Entrou');
-    if (validateFields({ email, completeName, username, password })) {
+    if (testaCampo( email, completeName, username, password )) {
       registerUser(email.value, password.value)
         .then(data => {
           console.log(data);
@@ -47,5 +53,4 @@
         });
     }
   }, false);
-
 })();

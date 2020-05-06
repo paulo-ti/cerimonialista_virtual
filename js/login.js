@@ -1,33 +1,43 @@
 
   'use strict'
 //! Referencia do FireBase
-var query = firebase.database().ref("UsuarioNovo").orderByKey();  
-var usuarioLogado;
-  function recuperaTag(tag){
-    return document.getElementById(tag)
-  };
+  var query = firebase.database().ref("UsuarioNovo").orderByKey();  
+  var usuarioLogado;
   
-  var $usuario = recuperaTag('lUsuario');
-  var $senha = recuperaTag('lSenha');
-  var $btnEntrar = recuperaTag('btnEntrar');
+  const email = document.querySelector('#lEmail');
+  const password = document.querySelector('#lSenha');
+  const btnEntrar = document.querySelector('#btnEntrar');
+
+  function paintField(field) {
+    const { value: fieldValue } = field;
+
+    field.border = `1px solid ${(fieldValue === '') ? 'red' : 'purple'}`;
+  }
+
+  function validateFields({ email,password }) {
+    const fields = [email, password];
+
+    const fieldsValue = fields.map(field => field.value);
+    fieldsValue.forEach(fieldValue => { paintField(fieldValue) });
+
+    return !fieldsValue.includes('');
+  }
   
   //!Evento de Logar
   $btnEntrar.addEventListener('click' , btnBuscaUsuario);
 
   function btnBuscaUsuario(e){
     e.preventDefault();
-    var uUsuario = $usuario.value;
-    var uSenha = $senha.value;
+    var uUsuario = email.value;
+    var uSenha = senha.value;
     var dados = [];
 
     function testaCampo(){
-      if(uUsuario == "" || uSenha == ""){
-        pintaCampo($usuario);
+      pintaCampo($usuario);
         pintaCampo($senha);
+      if(uUsuario == "" || uSenha == ""){
         return true;
       }else{
-        pintaCampo($usuario);
-        pintaCampo($senha);
         return false;
       }
     }
@@ -64,8 +74,8 @@ var usuarioLogado;
         x++;
       }
       if(!check){
-        $usuario.style.border = "1px solid red";
-        $senha.style.border = "1px solid red";
+        email.style.border = "1px solid red";
+        senha.style.border = "1px solid red";
         erro.classList.remove("d-none");
         
       }
