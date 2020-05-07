@@ -9,7 +9,9 @@ var $eventosCadastrados = document.getElementById('eventosCadastrados');
 buscarDados(validaUsuarioEvento);
 incluiCampo(eventoCheckado);
 function buscarDados(callback){
+  
   query.once("value").then(function(snapshot) {
+    
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
       eventos.push(childData);
@@ -24,15 +26,16 @@ function buscarDados(callback){
     setTimeout(() => {
       while(x < eventos.length){
         
-        if(eventos[x].usuario === url_atual[1]){
+        if(eventos[x].idUsuario === firebase.auth().currentUser.uid){
           eventoCheckado.push(eventos[x]);
         }
         x++;
       }
-    }, 1000);
+    }, 4000);
   }
 
   function incluiCampo(eventoCheckado){ 
+
     var x = 0;
     setTimeout(() => {
       
@@ -84,26 +87,8 @@ function buscarDados(callback){
         button.classList.add("btn","btn-roxa-opacite","text-light");
         button.id = "casamentoGerenciador"+x;
         i.classList.add("ml-2","fas","fa-cogs","mr-2");
-  //       $eventosCadastrados.innerHTML = `
-  //                   <li>  
-  //                 
-  //                  
-  //                     3  <div class="card-body text-roxa">
-  //                           =    <h5 class="card-title ">Casamento</h5>
-  //                            =   <p class="card-text">
-  //                                 De  com 
-  //                               </p>
-  //                          =     <p> Data:
-  //                           =    <button id="casamentoGerenciador" class="btn btn-roxa-opacite text-light">Gerenciar<i class="ml-2 fas fa-cogs mr-2"></i></button>
-  //                      3 </div>
-  //                     4  <div class="card-footer text-muted">
-  //                      4 </div>
-  //                    1 </div>
-  //                   </li>
-  // `;
-  
         x++;
       }
-    }, 3000);
+    }, 4000);
     
   }
