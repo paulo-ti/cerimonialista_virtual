@@ -8,7 +8,7 @@
   var uNumeroConvidados;
   var url_atual = window.location.href.split('?');
   var referenciaBanco = firebase.database().ref("EventoNovo");
-
+  
   $btnInicioCasamento.addEventListener('click' , (e)=>{
     e.preventDefault();
     uNoivo1 = recuperaDados('noivo1').value;
@@ -22,7 +22,9 @@
   });
 
   function cadastraEvento(verificacao){
+    
     if(verificacao){
+      debugger
        var resultato = referenciaBanco.push({
         noivo1: uNoivo1,
         noivo2 : uNoivo2,
@@ -30,10 +32,9 @@
         estado: uEstado,
         cidade: uCidade,
         numeroConvidados: uNumeroConvidados,
-        usuario: url_atual[1],
-        idEvento: url_atual[1]+'?'+uDataCasamento
+        idUsuario: firebase.auth().currentUser.uid
       });
-      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+url_atual[1]);
+      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+resultato.key);
       document.location.reload(true);
     }
   }

@@ -5,6 +5,8 @@ var eventos = [];
 var eventoCheckado = []
 var retorno = false;
 var $eventosCadastrados = document.getElementById('eventosCadastrados');
+let $btnGerenciadores = document.getElementsByClassName('btnGerenciadores');
+
 
 buscarDados(validaUsuarioEvento);
 incluiCampo(eventoCheckado);
@@ -12,6 +14,7 @@ function buscarDados(callback){
   query.once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
+      Array.prototype.push.call(childData , childSnapshot.key)
       eventos.push(childData);
       //console.log(childData);
     });
@@ -24,15 +27,16 @@ function buscarDados(callback){
     setTimeout(() => {
       while(x < eventos.length){
         
-        if(eventos[x].usuario === url_atual[1]){
-          eventoCheckado.push(eventos[x]);
+        if(eventos[x].idUsuario === firebase.auth().currentUser.uid){
+          eventoCheckado.push(eventos[x] );
         }
         x++;
       }
-    }, 1000);
+    }, 4000);
   }
 
   function incluiCampo(eventoCheckado){ 
+
     var x = 0;
     setTimeout(() => {
       
@@ -81,29 +85,20 @@ function buscarDados(callback){
         h5.classList.add("card-title");
         p1.classList.add("card-text");
         p2.classList.add("card-text");
-        button.classList.add("btn","btn-roxa-opacite","text-light");
-        button.id = "casamentoGerenciador"+x;
+        button.classList.add("btn","btn-roxa-opacite","text-light" , "btnGerenciadores");
+        button.id = eventoCheckado[x][0];
         i.classList.add("ml-2","fas","fa-cogs","mr-2");
-  //       $eventosCadastrados.innerHTML = `
-  //                   <li>  
-  //                 
-  //                  
-  //                     3  <div class="card-body text-roxa">
-  //                           =    <h5 class="card-title ">Casamento</h5>
-  //                            =   <p class="card-text">
-  //                                 De  com 
-  //                               </p>
-  //                          =     <p> Data:
-  //                           =    <button id="casamentoGerenciador" class="btn btn-roxa-opacite text-light">Gerenciar<i class="ml-2 fas fa-cogs mr-2"></i></button>
-  //                      3 </div>
-  //                     4  <div class="card-footer text-muted">
-  //                      4 </div>
-  //                    1 </div>
-  //                   </li>
-  // `;
-  
         x++;
       }
-    }, 3000);
+    }, 4000);
     
   }
+
+  setTimeout(() => {
+    Array.prototype.forEach.call($btnGerenciadores, function(i){
+      i.addEventListener('click' , function(){
+        window.location.href = "casamento_gerenciador.html?"+this.id;
+     })
+   })
+  }, 4000);
+      
