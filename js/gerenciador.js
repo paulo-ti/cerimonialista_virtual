@@ -5,15 +5,16 @@ var eventos = [];
 var eventoCheckado = []
 var retorno = false;
 var $eventosCadastrados = document.getElementById('eventosCadastrados');
+let $btnGerenciadores = document.getElementsByClassName('btnGerenciadores');
+
 
 buscarDados(validaUsuarioEvento);
 incluiCampo(eventoCheckado);
 function buscarDados(callback){
-  
   query.once("value").then(function(snapshot) {
-    
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
+      Array.prototype.push.call(childData , childSnapshot.key)
       eventos.push(childData);
       //console.log(childData);
     });
@@ -27,7 +28,7 @@ function buscarDados(callback){
       while(x < eventos.length){
         
         if(eventos[x].idUsuario === firebase.auth().currentUser.uid){
-          eventoCheckado.push(eventos[x]);
+          eventoCheckado.push(eventos[x] );
         }
         x++;
       }
@@ -84,11 +85,20 @@ function buscarDados(callback){
         h5.classList.add("card-title");
         p1.classList.add("card-text");
         p2.classList.add("card-text");
-        button.classList.add("btn","btn-roxa-opacite","text-light");
-        button.id = "casamentoGerenciador"+x;
+        button.classList.add("btn","btn-roxa-opacite","text-light" , "btnGerenciadores");
+        button.id = eventoCheckado[x][0];
         i.classList.add("ml-2","fas","fa-cogs","mr-2");
         x++;
       }
     }, 4000);
     
   }
+
+  setTimeout(() => {
+    Array.prototype.forEach.call($btnGerenciadores, function(i){
+      i.addEventListener('click' , function(){
+        window.location.href = "casamento_gerenciador.html?"+this.id;
+     })
+   })
+  }, 4000);
+      

@@ -24,6 +24,7 @@
   function cadastraEvento(verificacao){
     
     if(verificacao){
+      debugger
        var resultato = referenciaBanco.push({
         noivo1: uNoivo1,
         noivo2 : uNoivo2,
@@ -33,7 +34,7 @@
         numeroConvidados: uNumeroConvidados,
         idUsuario: firebase.auth().currentUser.uid
       });
-      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+url_atual[1]);
+      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+resultato.key);
       document.location.reload(true);
     }
   }
