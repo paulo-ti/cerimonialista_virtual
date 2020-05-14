@@ -1,6 +1,7 @@
 
   'use strict'
   let $btnSalvarCheckList = document.getElementsByClassName('btnSalvarCheckList')
+  let $btnEditarCheckList = document.getElementsByClassName('btnEditarCheckList')
   let $divschecklist = document.querySelectorAll('.divschecklist')
   let $noivos = document.getElementById('noivos')
   let url_atual1 = window.location.href.split('?')
@@ -19,13 +20,43 @@
   }
   //insertValues($divschecklist)
 
+  Array.prototype.forEach.call($btnEditarCheckList , function (btnEditarCheckList){
+    btnEditarCheckList.addEventListener('click' , function(editar){ 
+      editar.preventDefault()
+      
+      editar.path[1][0].readOnly = false
+      editar.path[1][1].disabled = false
+      editar.path[1][2].readOnly = false
+      editar.path[1][3].readOnly = false
+      editar.path[1][4].disabled = true
+      editar.path[1][5].disabled = false
+      
+
+     editar.path[1][5].addEventListener('click' , function(){
+       update(editar)
+     })
+
+    })
+  })
+
+  function update(values){
+    let fb = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/")
+    let fornecedor = values.path[1][0].value
+    let formaPagamento = values.path[1][1].value
+    let valorContrato = values.path[1][2].value
+    let dataFinalContrato = values.path[1][3].value
+    
+    let data = { fornecedor , formaPagamento , valorContrato , dataFinalContrato }
+    fb.update(data)
+
+  }
+
   function insertValues(div){
     let x = 0
     let y = 0
     
     for( x; div.length > x ; x++) {
       for( y ; itensCheckList.length > y ; y++){
-        
       if (div[x].id === itensCheckList[y].nomeCheckList) {
         $divschecklist[x].lastElementChild.lastElementChild[0].value = itensCheckList[y].fornecedor
         $divschecklist[x].lastElementChild.lastElementChild[1].selectedOptions[0].label = `Pagamento em ${itensCheckList[y].formaPagamento}`
@@ -46,7 +77,8 @@
     let x = 0
     while(obj.length > x){
       if(typeof obj[x] === "object")
-      itensCheckList = itensCheckList.concat(Object.values(obj[x]))
+      
+      itensCheckList = itensCheckList.concat(obj[x])
       x++;
     }
    call($divschecklist)
@@ -54,7 +86,9 @@
 
   function fetchData(){
     query1.once("value").then(function(snapshot) {
+      
       snapshot.forEach(function(childSnapshot) {
+        
         var childData = childSnapshot.val();
         itensEvento.push(childData);
       });
@@ -76,7 +110,8 @@
     btnSalvarCheckList.addEventListener('click' , function(buttom){
       buttom.preventDefault()
       
-      let check = [
+      if (buttom.path[1][4].disabled === false) {
+        let check = [
                   isValid(buttom.path[1][0]),
                   isValid(buttom.path[1][1]),
                   isValid(buttom.path[1][2]),
@@ -90,6 +125,12 @@
       else{
         this.disabled = true;
         insertInto(buttom)
+      }
+      }else{
+        alert('Dados atualizados com sucesso!')
+        update(buttom)
+        this.disabled = true;
+        buttom.path[1][4].disabled = false
       }
     })
   })
@@ -106,16 +147,23 @@
     }
 
     function insertInto(values){
-      var referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id);
+      //var referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/");
       
-        let resultado = referenciaBanco.push({
-          fornecedor: values.path[1][0].value,
-          formaPagamento: values.path[1][1].value,
-          valorContrato: values.path[1][2].value,
-          dataFinalContrato: values.path[1][3].value,
-          nomeCheckList: values.path[3].id
-        })
-        values.path[1][0].readOnly = true
+       let referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/")
+    
+    
+       
+       
+       // let resultado = referenciaBanco.push({
+         let fornecedor = values.path[1][0].value
+         let formaPagamento = values.path[1][1].value
+         let valorContrato = values.path[1][2].value
+         let dataFinalContrato = values.path[1][3].value
+         let nomeCheckList = values.path[3].id
+         // })
+         let data = { fornecedor , formaPagamento , valorContrato , dataFinalContrato  , nomeCheckList }
+         referenciaBanco.update(data)
+         values.path[1][0].readOnly = true
         values.path[1][1].disabled = true
         values.path[1][2].readOnly = true
         values.path[1][3].readOnly = true
