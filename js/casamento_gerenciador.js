@@ -92,6 +92,7 @@
         var childData = childSnapshot.val();
         itensEvento.push(childData);
       });
+
     });
   }
 

@@ -24,7 +24,7 @@
   function cadastraEvento(verificacao){
     
     if(verificacao){
-      debugger
+      
        var resultato = referenciaBanco.push({
         noivo1: uNoivo1,
         noivo2 : uNoivo2,
