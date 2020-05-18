@@ -5,10 +5,7 @@ var $casamentoGerenciador = document.getElementById('casamentoGerenciador');
 var $criarEvento = document.getElementById('criarEvento');
 var url_atual = window.location.href.split('?');
 
-$btnCasamento.addEventListener('click' , () => {
-  window.history.pushState("object or string", "Title", "/casamento.html?"+url_atual[1]);
-  document.location.reload(true);
-})
+
 
 $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
     if (!$(this).next().hasClass('show')) {

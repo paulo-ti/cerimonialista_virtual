@@ -40,7 +40,6 @@
             </li>
           </ul>
         </li>
-        <button id="btnCasamento" class="d-none" type="button" ></button>
           <!--  <a class="dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
           </a> -->
 
@@ -56,8 +55,11 @@
       </div>
     </div>
       <ul class="ml-auto nav mr-3">
+        <li class="nav-item mr-2 text-roxa font-italic font-weight-bold ">
+          Bem Vindo!
+        </li>
         <li class="nav-item text-roxa font-italic font-weight-bold ">
-          <span id="nomeUsuario">Bem Vindo!</span>
+          <span id="nomeUsuario"></span>
         </li>
       </ul>
       <img class="animated pulseAlter" height="35px" src="assets/cerimonialista_virtual.png">
@@ -67,27 +69,59 @@
     
     <!-- afastaTopo-->
     <div id="afastaTopoHome" class="container bg-ligth"></div>
+    <button id="btnCasamento" type="button" class="d-none mb-1 btn btn-warning btn-lg btn-block text-roxa font-italic font-weight-bold txtMenuDrop mr-1"></button>
     <!-- end afastaTopo-->
-    
-    <!-- ! Evento-->
-    <!-- ! Evento-->
-    <div class="row btn-roxa-opacite text-light py-3">
-      <h5 class="m-auto"> <i class="animated fadeInDownInfinite fas fa-angle-double-down mr-3"></i>Gerenciador de Eventos <i class="animated fadeInDownInfinite fas fa-angle-double-down ml-2"></i></h5>
-    </div>
-    <!-- ! Buttons -->
-    <div class="container pt-1 text-center">
-      <div class="container">
+       <!-- ! Evento-->
+      <div class="row btn-roxa-opacite text-light py-3">
+        <h5 class="m-auto font-italic">Duvidas<i class="fas fa-question-circle ml-2"></i>
+        </h5>
       </div>
-      <div class="jumbotron btn-roxa-opacite pt-2 mb-1">
-        <div class="col-lg-8 m-auto">
-          <h4 class="text-light font-italic my-3 text-center">Meus Eventos.</h4> 
-          <ul id="eventosCadastrados" class="justify-contente-center">
-            
-          </ul>
+
+      <!-- ! Buttons -->
+      <div class="container pt-1 ">
+        <div class="jumbotron btn-roxa-opacite pt-4 px-3 mb-1 text-light">
+          <div class="col-lg-6 m-auto bg-light border rounded px-3 py-1">
+            <button id="btnSalvarCadastro" class="font-italic btn bg-warning mt-4 btn-lg btn-block text-roxa" >FAQ</button>
+            <div class="mt-2 py-3 jumbotron btn-roxa-opacite">
+            <label class="txtLabel text-light">Posso criar mais de um evento no mesmo Cadastro?</label><br/>
+            <p class="text-warning text-justify">
+              Sim, você pode criar quantos eventos quiser e de varios generos como: Casamento, formatura e etc.
+               Seus eventos ficarão disponiveis no Menu superior do lado esquero na aba "Meus Eventos".
+            </p>
+            <label class="txtLabel text-light">
+              Por quanto tempo meu evento ficar disponivel no Gerenciador?</label><br/>
+            <p class="text-warning text-justify">
+              Por dois anos após a data da criação. Caso seja necessário mais tempo,
+               você pode solicitar a extensão desse prazo.
+            </p>
+            <label class="txtLabel text-light">Tenho que pagar algo para utilizar o sistema?</label><br/>
+            <p class="text-warning text-justify">
+              Não. Oferecemos de forma totalmente gratúita. É nosso presente para você;
+            </p>
+            <label class="txtLabel text-light">Posso fazer download do site?</label><br/>
+            <p class="text-warning text-justify">
+              Infelizmente não. Mas quem sabe no futuro.
+            </p>
+            <label class="txtLabel text-light">Outras pessoas pode ver meus dados inseridos aqui?</label><br/>
+            <p class="text-warning text-justify">
+              Não. Para sua privacidade e segurança, o acessos é pessoal e recomendamos que não repasse a sua senha para terceiros.
+            </p>
+          </div>
+
+          <button id="btnSalvarCadastro" class="font-italic btn bg-warning mt-4 btn-lg btn-block text-roxa" >SAC</button>
+            <div class="mt-2 py-3 jumbotron btn-roxa-opacite">
+            <h6 class="text-light text-center">
+              <p class="mt-2"> Se ainda restar alguma duvida:</p>
+              <label> Fale com a gente</label>
+              <p> De segunda a sexta das 9:00 as 17:00h</p>
+              <label> 85 3118-2929</label>
+              <label style="font-size: 13px; font-style: italic;"> atendimento@cerimonialistavirtual.com</label>
+            </h6>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- ! end Buttons-->
+         
     
   <!-- Footer -->
   <div id="footer" class="row bg-warning text-center px-2 shadow">
@@ -127,7 +161,7 @@
   <script src="js/firebase.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/home.js"></script>
-  <script src="js/gerenciador.js"></script>
+  <script src="js/casamento.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <body>
