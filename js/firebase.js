@@ -12,5 +12,21 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
 })()
 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
+
+async function logout() {
+  let auth = firebase.auth();
+  console.log(auth);
+  alert(auth);
+  await auth.signOut();
+  window.location.href = "index.html";
+}

@@ -1,4 +1,4 @@
-
+verificarUsuarioLogado();
 var $btnCasamento = document.getElementById('btnCasamento');
 var $gerenciarEvento = document.getElementById('gerenciarEvento');
 var $casamentoGerenciador = document.getElementById('casamentoGerenciador');
