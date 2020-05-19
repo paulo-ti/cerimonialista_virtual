@@ -1,5 +1,6 @@
 
   'use strict'
+  verificarUsuarioLogado();
   let $btnSalvarCheckList = document.getElementsByClassName('btnSalvarCheckList')
   let $btnEditarCheckList = document.getElementsByClassName('btnEditarCheckList')
   let $divschecklist = document.querySelectorAll('.divschecklist')

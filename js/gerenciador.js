@@ -1,4 +1,4 @@
-
+verificarUsuarioLogado();
 var query = firebase.database().ref("EventoNovo").orderByKey();
 var url_atual = window.location.href.split('?');
 var eventos = [];

@@ -1,4 +1,4 @@
-
+verificarUsuarioLogado();
   var $btnInicioCasamento = document.getElementById('btnInicioCasamento');
   var uNoivo1 ;
   var uNoivo2;
