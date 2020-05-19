@@ -25,8 +25,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 async function logout() {
   let auth = firebase.auth();
-  console.log(auth);
-  alert(auth);
   await auth.signOut();
   window.location.href = "index.html";
 }
