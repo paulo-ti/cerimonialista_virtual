@@ -49,7 +49,6 @@
 
   async function writeUserData(userId, name, username) {
     await firebase.database().ref('users/' + userId).set({
-      uid: userId,
       nomeCompleto: name,
       nomeUsuario: username,
     });
