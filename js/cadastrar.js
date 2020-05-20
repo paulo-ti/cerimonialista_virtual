@@ -51,6 +51,7 @@
     await firebase.database().ref('users/' + userId).set({
       nomeCompleto: name,
       nomeUsuario: username,
+      uid: userId
     });
   }
 })();
