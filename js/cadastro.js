@@ -3,7 +3,11 @@
     async function getUsers(){
         const user = await verificarUsuarioLogadoAsync();
         const userData = await getUsersFromDatabase(user.uid);
-        document.getElementById("nomeCompleto").value = userData.nomeCompleto;
+        try{
+            document.getElementById("nomeCompleto").value = userData.nomeCompleto;
+        }catch(e){
+            console.log(e);
+        }
         document.getElementById("email").value = user.email;
     }
 
