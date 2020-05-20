@@ -1,6 +1,4 @@
 (function () {
-  const database = firebase.database();
-  const userRef = database.ref("Usuario");
 
   const email = document.querySelector('#txtEmail');
   const completeName = document.querySelector('#txtNome');
@@ -35,13 +33,24 @@
     e.preventDefault();
     if (testaCampo( email, completeName, username, password )) {
       firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
-        .then(data => {
-          window.location.href = "home.html";
-          console.log(data);
+        .then((data) => {
+          writeUserData(data.user.uid, completeName.value, username.value).then(v=>{
+            window.location.href = "home.html";
+          })
+          .catch(err =>{
+            console.error(err);
+          });
         })
         .catch(err => {
           console.error(err);
         });
     }
   }, false);
+
+  async function writeUserData(userId, name, username) {
+    await firebase.database().ref('users/' + userId).set({
+      nomeCompleto: name,
+      nomeUsuario: username,
+    });
+  }
 })();

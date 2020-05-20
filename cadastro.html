@@ -82,31 +82,33 @@
         <div class="jumbotron btn-roxa-opacite pt-4 px-3 mb-1 text-light">
           <div class="col-lg-6 m-auto bg-light border rounded p-3">
           
-            <form class="form-group">
+            <form class="form-group" >
 
-            <label class="txtLabel text-roxa">Nome Completo</label>
-            <input id="nomeCompleto" type="text" class="d-inline form-control mb-2 text-roxa" maxlength="70">
-            <label class="txtLabel text-roxa">Email</label>
-            <input id="email" type="text" class="d-inline form-control mb-2 text-roxa" maxlength="70">
+              <label class="txtLabel text-roxa">Nome Completo</label>
+              <input id="nomeCompleto" type="text" class="d-inline form-control mb-2 text-roxa" maxlength="70">
+              <label class="txtLabel text-roxa">Email</label>
+              <input disabled id="email" type="text" class="d-inline form-control mb-2 text-roxa" maxlength="70">
+              
+              <label class="txtLabel text-roxa">Sexo</label><br/>
+              <input id="sexoM" type="radio" name="sexo" value="M" class=" mb-2 mr-2 text-roxa mx-auto">
+              <label class="txtLabel text-roxa mr-3" for="sexoM">Masculino</label>
+              <input id="sexoF" type="radio" name="sexo" value="F" class=" mb-2 mr-2 text-roxa mx-auto">
+              <label class="txtLabel text-roxa mr-3">Feminino</label>
+              
+              <br>
+              <label id="labelTelefone" class="txtLabel text-roxa">Telefone para Contato</label>
+              <input id="telefone" type="number" class="d-inline form-control mb-2 text-roxa" maxlength="11">
+              <label class="txtLabel text-roxa">Data de nascimento</label>
+              <input id="dataNascimento" type="date" class="d-inline form-control mb-4 text-roxa" maxlength="11">
+
+              <input id="receberEmail" type="checkbox" class=" mb-3 text-roxa">
+              <label class="txtLabel text-roxa">Quero receber e-mails promocionais</label><br/>
+              <input id="receberWpp" type="checkbox" class=" mb-3 text-roxa">
+              <label class="txtLabel text-roxa">Quero receber notificações via whatsapp</label></br/>
+
+              <button onclick="updateUser(event)" class="btn bg-warning mt-4 btn-lg btn-block text-roxa">Salvar Alterações</button>
+            </form>
             
-            <label class="txtLabel text-roxa">Sexo</label><br/>
-            <input id="sexoM" type="radio" name="sexo" value="masculino" class=" mb-2 mr-2 text-roxa mx-auto">
-            <label class="txtLabel text-roxa mr-3" for="sexoM">Masculino</label>
-            <input id="sexoF" type="radio" name="sexo" value="feminino" class=" mb-2 mr-2 text-roxa mx-auto">
-            <label class="txtLabel text-roxa mr-3">Feminino</label>
-
-            <label class="txtLabel text-roxa">Telefone para Contato</label>
-            <input id="noivo1" type="text" class="d-inline form-control mb-2 text-roxa" maxlength="11">
-            <label class="txtLabel text-roxa">Data de nascimento</label>
-            <input id="noivo1" type="date" class="d-inline form-control mb-4 text-roxa" maxlength="11">
-
-            <input id="receberEmail" type="checkbox" class=" mb-3 text-roxa">
-            <label class="txtLabel text-roxa">Quero receber e-mails promocionais</label><br/>
-            <input id="receberWpp" type="checkbox" class=" mb-3 text-roxa">
-            <label class="txtLabel text-roxa">Quero receber notificações via whatsapp</label></br/>
-
-            <button id="btnSalvarCadastro" class="btn bg-warning mt-4 btn-lg btn-block text-roxa" type="submit">Salvar Alterações</button>
-          </form>
           </div>
         </div>
       </div>
