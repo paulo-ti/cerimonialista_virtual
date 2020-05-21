@@ -23,16 +23,19 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
   });
 
   $gerenciarEvento.addEventListener('click' , () => {
-    window.history.pushState("object or string", "Title", "/gerenciador_eventos.html?"+url_atual[1]);
-    document.location.reload(true);
+    window.location.href = "gerenciador_eventos.html"//?"+url_atual[1];
+    // window.history.pushState("object or string", "Title", "/gerenciador_eventos.html?"+url_atual[1]);
+    // document.location.reload(true);
   })
 
   $criarEvento.addEventListener('click' , () => {
-    window.history.pushState("object or string", "Title", "/home.html?"+url_atual[1]);
-    document.location.reload(true);
+    window.location.href = "home.html"//?"+url_atual[1];
+    // window.history.pushState("object or string", "Title", "/home.html?"+url_atual[1]);
+    // document.location.reload(true);
   })
   
   $casamentoGerenciador.addEventListener('click' , () => {
-    window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+url_atual[1]);
-    document.location.reload(true);
+    window.location.href = "casamento_gerenciador.html"//?"+url_atual[1];
+    // window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+url_atual[1]);
+    // document.location.reload(true);
   })
