@@ -1,0 +1,52 @@
+
+.bg-roxa {
+  background-color: #8F3FE8 !important;
+}
+
+.btn-roxa-opacite {
+  background-color: rgba(79, 20, 128, 0.616);
+}
+
+.text-roxa {
+  color: #8F3FE8 !important;
+}
+
+a.bg-roxa:hover, a.bg-roxa:focus,
+button.bg-roxa:hover,
+button.bg-roxa:focus {
+  background-color: #8F3FE8 !important;
+}
+
+.btn-roxa {
+  color: #fff;
+  background-color: #8F3FE8;
+  border-color: #8F3FE8;
+}
+
+.btn-roxa:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-roxa:focus, .btn-roxa.focus {
+  box-shadow: 0 0 0 0.2rem rgba(247, 172, 34, 0.5);
+}
+
+.btn-roxa.disabled, .btn-roxa:disabled {
+  color: #fff;
+  background-color: #8F3FE8;
+  border-color: #8F3FE8;
+}
+
+.btn-roxa:not(:disabled):not(.disabled):active, .btn-roxa:not(:disabled):not(.disabled).active,
+.show > .btn-roxa.dropdown-toggle {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-roxa:not(:disabled):not(.disabled):active:focus, .btn-roxa:not(:disabled):not(.disabled).active:focus,
+.show > .btn-roxa.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(247, 172, 34, 0.5);
+}

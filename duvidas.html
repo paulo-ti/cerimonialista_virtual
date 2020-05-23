@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/cores.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <title>Cerimonialista Virtual®</title>
+</head>
+<body class="body animated fadeInLeft">
+  <!-- Topo-->
+   <nav  class="navbar navbar-expand-lg fixed-top bg-warning navbar-light m-0 px-3">
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="cadastro.html">
+          <i class="fas fa-list mr-2"></i>Cadastro
+        </a>
+        <li class="dropdown-submenu">
+          <a class="py-2 dropdown-item dropdown-toggle  border-bottom text-roxa font-italic font-weight-bold txtMenuDrop"
+         href="#" type="button" id="dropdownSubMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-address-book mr-2"></i></i>Seus Eventos
+        </a>
+          <ul class="dropdown-menu  bg-warning">
+            <li>
+              <button id="criarEvento" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
+                <i class="fas fa-plus-square mr-2"></i>Criar Evento
+            </button>
+            </li>
+            <li>
+              <button id="gerenciarEvento" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
+              <i class="fas fa-cogs mr-2"></i>Gerenciar Evento
+            </button>
+            </li>
+          </ul>
+        </li>
+          <!--  <a class="dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          </a> -->
+
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+          <i class="fas fa-people-carry mr-2"></i>Fornecedores
+        </a>
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="duvidas.html">
+          <i class="fas fa-question-circle mr-2"></i>Duvidas
+        </a>
+        <a onclick="logout()" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
+          <i class="fas fa-sign-out-alt mr-2"></i>Sair
+        </a>
+      </div>
+    </div>
+      <ul class="ml-auto nav mr-3">
+        <li class="nav-item mr-2 text-roxa font-italic font-weight-bold ">
+          Bem Vindo!
+        </li>
+        <li class="nav-item text-roxa font-italic font-weight-bold ">
+          <span id="nomeUsuario"></span>
+        </li>
+      </ul>
+      <img class="animated pulseAlter" height="35px" src="assets/cerimonialista_virtual.png">
+    </div>
+    </nav>
+    <!-- end Topo-->
+    
+    <!-- afastaTopo-->
+    <div id="afastaTopoHome" class="container bg-ligth"></div>
+    <button id="btnCasamento" type="button" class="d-none mb-1 btn btn-warning btn-lg btn-block text-roxa font-italic font-weight-bold txtMenuDrop mr-1"></button>
+    <!-- end afastaTopo-->
+       <!-- ! Evento-->
+      <div class="row btn-roxa-opacite text-light py-3">
+        <h5 class="m-auto font-italic">Duvidas<i class="fas fa-question-circle ml-2"></i>
+        </h5>
+      </div>
+
+      <!-- ! Buttons -->
+      <div class="container pt-1 ">
+        <div class="jumbotron btn-roxa-opacite pt-4 px-3 mb-1 text-light">
+          <div class="col-lg-6 m-auto bg-light border rounded px-3 py-1">
+            <button id="btnSalvarCadastro" class="font-italic btn bg-warning mt-4 btn-lg btn-block text-roxa" >FAQ</button>
+            <div class="mt-2 py-3 jumbotron btn-roxa-opacite">
+            <label class="txtLabel text-light">Posso criar mais de um evento no mesmo Cadastro?</label><br/>
+            <p class="text-warning text-justify">
+              Sim, você pode criar quantos eventos quiser e de varios generos como: Casamento, formatura e etc.
+               Seus eventos ficarão disponiveis no Menu superior do lado esquero na aba "Meus Eventos".
+            </p>
+            <label class="txtLabel text-light">
+              Por quanto tempo meu evento ficar disponivel no Gerenciador?</label><br/>
+            <p class="text-warning text-justify">
+              Por dois anos após a data da criação. Caso seja necessário mais tempo,
+               você pode solicitar a extensão desse prazo.
+            </p>
+            <label class="txtLabel text-light">Tenho que pagar algo para utilizar o sistema?</label><br/>
+            <p class="text-warning text-justify">
+              Não. Oferecemos de forma totalmente gratúita. É nosso presente para você;
+            </p>
+            <label class="txtLabel text-light">Posso fazer download do site?</label><br/>
+            <p class="text-warning text-justify">
+              Infelizmente não. Mas quem sabe no futuro.
+            </p>
+            <label class="txtLabel text-light">Outras pessoas pode ver meus dados inseridos aqui?</label><br/>
+            <p class="text-warning text-justify">
+              Não. Para sua privacidade e segurança, o acessos é pessoal e recomendamos que não repasse a sua senha para terceiros.
+            </p>
+          </div>
+
+          <button id="btnSalvarCadastro" class="font-italic btn bg-warning mt-4 btn-lg btn-block text-roxa" >SAC</button>
+            <div class="mt-2 py-3 jumbotron btn-roxa-opacite">
+            <h6 class="text-light text-center">
+              <p class="mt-2"> Se ainda restar alguma duvida:</p>
+              <label> Fale com a gente</label>
+              <p> De segunda a sexta das 9:00 as 17:00h</p>
+              <label> 85 3118-2929</label>
+              <label style="font-size: 13px; font-style: italic;"> atendimento@cerimonialistavirtual.com</label>
+            </h6>
+          </div>
+          </div>
+        </div>
+      </div>
+         
+    
+  <!-- Footer -->
+  <div id="footer" class="row bg-warning text-center px-2 shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5 class="pb-1">Redes Sociais</h5>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/facebook.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/instagram.png"></a>
+          <a class="text-roxa mr-4" href="#"><img height="30px" src="assets/whatsapp.png"></a>
+          <a class="text-roxa" href="#"><img height="30px" src="assets/twitter.png"></a>
+        </div>
+        <div class="col-lg-6 text-center pt-4 text-roxa">
+          <h5>Central de Atendimento</h5>
+          <a class="text-roxa" href="#">Fale Conosco  |</a>
+          <a class="text-roxa" href="#">Trabalhe Conosco  |</a>
+          <a class="text-roxa" href="#">Pagamentos</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row border-top pt-3 mt-4 px-4">
+      <p class="text-roxa mt-2 ">
+        Copyright Cerimonialista Virtual | Todos os direitos reservados. | É proibida a reprodução do conteúdo desta página em qualquer meio de comunicação, eletrônico ou impresso, sem autorização escrita do Cerimonialista Virtual.
+      </p>
+    </div>
+  </div>
+  <!-- end Footer -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+
+  <!-- Imports-->
+  <script src="js/firebase.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/usuarioLogado.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/casamento.js"></script>
+  <script src="js/duvidas.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<body>
+</html>
