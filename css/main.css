@@ -2,7 +2,12 @@
 
 /* CSS ESTILIZADO */
 
-
+#calendar {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 10px;
+  font-size: 0.8rem;
+}
 
 html  {
   overflow-x:hidden;
@@ -42,6 +47,12 @@ html  {
 .txtMenuDrop {
   font-size: 16px;
 }
+
+.txtMenuDrop1 {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 
  ul {  
   list-style: none;

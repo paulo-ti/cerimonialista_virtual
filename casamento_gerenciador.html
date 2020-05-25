@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="css/cores.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+  <link href="./css/fullcalendar.min.css" rel='stylesheet' />
+  <link href='./css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='./js/moment.min.js'></script>
+  <script src='./js/jquery.min.js'></script>
+  <script src='./js/fullcalendar.min.js'></script>
+  <script src='./js/locale/pt-br.js'></script>
+  <script src='./js/locale-all.js'></script>
+  
+ 
   <title>Cerimonialista Virtual®</title>
 </head>
 <body class="body animated fadeInLeft">
@@ -19,7 +28,7 @@
         <span class="navbar-toggler-icon bg-light"></span>
       </button>
       <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
-        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="#">
+        <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="cadastro.html">
           <i class="fas fa-list mr-2"></i>Cadastro
         </a>
         <li class="dropdown-submenu">
@@ -164,6 +173,7 @@
                       </div>
                     </div>
                 </li>
+
                 <li class="nav-item">
                   <button type="button" data-toggle="collapse" data-target="#Igreja"
                   class="btn-block mb-2 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
@@ -494,23 +504,49 @@
                       <input id="dataContrato" type="date" 
                       class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
                       <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
-                      </form>
-                    </div>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList">Editar </button>
+                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList">Salvar </button>
+                    </form>
                   </div>
+                </div>
                 </li>
 
               </ul>
             </div>
-           </div> 
+          </div> 
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Agenda">
-            <div class="jumbotron pt-4 text-roxa">Agenda</div>
+            <div class="jumbotron pt-4 text-roxa">
+              <h4 class="border-bottom pb-1 mb-2">Agenda</h4>
+               <div class="jumbotron btn-roxa-opacite p-2 my-2">
+                <div id="janeiro" class="mt-1  divschecklist">
+                  <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                    <div id='calendar'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
+          
+          
           <div class="collapse mt-1 col-lg-8 m-auto" id="Contratos">
-           <div class="jumbotron pt-4 text-roxa">Contratos</div>
+            <div class="jumbotron pt-4 pb-5 text-roxa">
+              <h4 class="border-bottom pb-1 mb-2">Contratos</h4>
+              <div class="jumbotron btn-roxa-opacite p-2 my-2">
+                <div class="jumbotron bg-warning px-0 py-1 mb-2">
+                  <div class="col border-bottom pb-2 mb-3">
+                    <input class="my-2 text-roxa col" type="file">
+                      <input id="descricao" type="text"  class="btn mb-2 text-roxa border-bottom text-left" placeholder="Descrição">
+                      <button id="btnContratosSalvar" class=" mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Enviar </button>
+                    </div>
+                    <ul class="mt-1 ml-3 nav flex-column pb-3 text-center" >
+                      <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                      <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                      <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Lista">
@@ -579,10 +615,10 @@
 
   <!-- Imports-->
   <script src="js/firebase.js"></script>
-  <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/usuarioLogado.js"></script>
   <script src="js/home.js"></script>
   <script src="js/casamento_gerenciador.js"></script>
+  <script src="js/calendario.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <body>

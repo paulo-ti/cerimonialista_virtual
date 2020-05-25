@@ -34,8 +34,9 @@ verificarUsuarioLogado();
         numeroConvidados: uNumeroConvidados,
         idUsuario: firebase.auth().currentUser.uid
       });
-      window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+resultato.key);
-      document.location.reload(true);
+      window.location.href = "casamento_gerenciador.html?"+resultato.key;
+      // window.history.pushState("object or string", "Title", "/casamento_gerenciador.html?"+resultato.key);
+      // document.location.reload(true);
     }
   }
 
