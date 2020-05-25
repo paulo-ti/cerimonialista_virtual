@@ -1,16 +1,19 @@
+var idEventoGlobal;
+(async function() {
+  user = await verificarUsuarioLogadoAsync();
 
-  'use strict'
-  verificarUsuarioLogado();
   let $btnSalvarCheckList = document.getElementsByClassName('btnSalvarCheckList')
   let $btnEditarCheckList = document.getElementsByClassName('btnEditarCheckList')
   let $divschecklist = document.querySelectorAll('.divschecklist')
   let $noivos = document.getElementById('noivos')
   let url_atual1 = window.location.href.split('?')
+  let idEvento = url_atual1[1];
+  idEventoGlobal = idEvento;
   let event = []
   let itensEvento = []
   let itensCheckList = []
   const query = firebase.database().ref("EventoNovo").orderByKey();
-  const query1 = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]).orderByKey();
+  const query1 = firebase.database().ref("EventoNovo"+"/"+idEvento).orderByKey();
 
   window.onload = selectDates()
   //$noivos.textContent = 
@@ -41,7 +44,7 @@
   })
 
   function update(values){
-    let fb = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/")
+    let fb = firebase.database().ref("EventoNovo"+"/"+idEvento+"/"+values.path[3].id+"/")
     let fornecedor = values.path[1][0].value
     let formaPagamento = values.path[1][1].value
     let valorContrato = values.path[1][2].value
@@ -151,7 +154,7 @@
     function insertInto(values){
       //var referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/");
       
-       let referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/")
+       let referenciaBanco = firebase.database().ref("EventoNovo"+"/"+idEvento+"/"+values.path[3].id+"/")
     
     
        
@@ -171,6 +174,8 @@
         values.path[1][3].readOnly = true
         alert('Os dados foram salvos com Sucesso!!')
     }
+})()
+  
 
     // Para trabalhar no select mais pra frente
  

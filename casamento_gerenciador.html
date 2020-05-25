@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/cores.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <link href="./css/fullcalendar.min.css" rel='stylesheet' />
   <link href='./css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
@@ -503,7 +502,7 @@
                       <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato">
                       <input id="dataContrato" type="date" 
                       class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechmento do Contrato</label>
+                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
                       <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList">Editar </button>
                       <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList">Salvar </button>
                     </form>
@@ -535,7 +534,7 @@
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
                 <div class="jumbotron bg-warning px-0 py-1 mb-2">
                   <div class="col border-bottom pb-2 mb-3">
-                    <input class="my-2 text-roxa col" type="file">
+                    <input id="input-file" class="my-2 text-roxa col" type="file">
                       <input id="descricao" type="text"  class="btn mb-2 text-roxa border-bottom text-left" placeholder="Descrição">
                       <button id="btnContratosSalvar" class=" mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Enviar </button>
                     </div>
@@ -612,12 +611,14 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
 
   <!-- Imports-->
   <script src="js/firebase.js"></script>
   <script src="js/usuarioLogado.js"></script>
   <script src="js/home.js"></script>
   <script src="js/casamento_gerenciador.js"></script>
+  <script src="js/contratos.js"></script>
   <script src="js/calendario.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
