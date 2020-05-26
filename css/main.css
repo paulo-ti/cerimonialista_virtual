@@ -53,6 +53,10 @@ html  {
   text-align: center;
 }
 
+.textTable {
+  font-size: 0.8rem;
+}
+
 
  ul {  
   list-style: none;
