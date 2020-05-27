@@ -1,7 +1,7 @@
-
-var  idEventoGlobal;
+var idEventoGlobal;
 (async function() {
-user = await verificarUsuarioLogadoAsync();
+  user = await verificarUsuarioLogadoAsync();
+
   let $btnSalvarCheckList = document.getElementsByClassName('btnSalvarCheckList')
   let $btnEditarCheckList = document.getElementsByClassName('btnEditarCheckList')
   let $divschecklist = document.querySelectorAll('.divschecklist')
@@ -16,7 +16,7 @@ user = await verificarUsuarioLogadoAsync();
   const query1 = firebase.database().ref("EventoNovo"+"/"+idEvento).orderByKey();
 
   window.onload = selectDates()
-  //$noivos.textContent =
+  //$noivos.textContent = 
 
   function selectDates(){
     fetchData()
@@ -25,16 +25,16 @@ user = await verificarUsuarioLogadoAsync();
   //insertValues($divschecklist)
 
   Array.prototype.forEach.call($btnEditarCheckList , function (btnEditarCheckList){
-    btnEditarCheckList.addEventListener('click' , function(editar){
+    btnEditarCheckList.addEventListener('click' , function(editar){ 
       editar.preventDefault()
-
+      
       editar.path[1][0].readOnly = false
       editar.path[1][1].disabled = false
       editar.path[1][2].readOnly = false
       editar.path[1][3].readOnly = false
       editar.path[1][4].disabled = true
       editar.path[1][5].disabled = false
-
+      
 
      editar.path[1][5].addEventListener('click' , function(){
        update(editar)
@@ -49,7 +49,7 @@ user = await verificarUsuarioLogadoAsync();
     let formaPagamento = values.path[1][1].value
     let valorContrato = values.path[1][2].value
     let dataFinalContrato = values.path[1][3].value
-
+    
     let data = { fornecedor , formaPagamento , valorContrato , dataFinalContrato }
     fb.update(data)
 
@@ -58,7 +58,7 @@ user = await verificarUsuarioLogadoAsync();
   function insertValues(div){
     let x = 0
     let y = 0
-
+    
     for( x; div.length > x ; x++) {
       for( y ; itensCheckList.length > y ; y++){
       if (div[x].id === itensCheckList[y].nomeCheckList) {
@@ -76,13 +76,12 @@ user = await verificarUsuarioLogadoAsync();
       }y = 0
     }
   }
-
+  
   function listItems(obj , call){
     let x = 0
     while(obj.length > x){
       if(typeof obj[x] === "object")
-
-      itensCheckList = itensCheckList.concat(obj[x])
+        itensCheckList = itensCheckList.concat(obj[x])
       x++;
     }
    call($divschecklist)
@@ -90,9 +89,9 @@ user = await verificarUsuarioLogadoAsync();
 
   function fetchData(){
     query1.once("value").then(function(snapshot) {
-
+      
       snapshot.forEach(function(childSnapshot) {
-
+        
         var childData = childSnapshot.val();
         itensEvento.push(childData);
       });
@@ -108,13 +107,13 @@ user = await verificarUsuarioLogadoAsync();
   //     }
   //   })
   //   return check
-  //   isValid($divschecklist[0].lastElementChild.lastElementChild)
+  //   isValid($divschecklist[0].lastElementChild.lastElementChild)  
   // }
 
   Array.prototype.forEach.call( $btnSalvarCheckList , (btnSalvarCheckList)=>{
     btnSalvarCheckList.addEventListener('click' , function(buttom){
       buttom.preventDefault()
-
+      
       if (buttom.path[1][4].disabled === false) {
         let check = [
                   isValid(buttom.path[1][0]),
@@ -122,7 +121,7 @@ user = await verificarUsuarioLogadoAsync();
                   isValid(buttom.path[1][2]),
                   isValid(buttom.path[1][3])
                   ]
-
+      
       let checklsit =  check.find( i => i == false)
       if(checklsit == false) {
         alert('Favor preencher todos os campos!')
@@ -153,12 +152,12 @@ user = await verificarUsuarioLogadoAsync();
 
     function insertInto(values){
       //var referenciaBanco = firebase.database().ref("EventoNovo"+"/"+url_atual1[1]+"/"+values.path[3].id+"/");
-
+      
        let referenciaBanco = firebase.database().ref("EventoNovo"+"/"+idEvento+"/"+values.path[3].id+"/")
-
-
-
-
+    
+    
+       
+       
        // let resultado = referenciaBanco.push({
          let fornecedor = values.path[1][0].value
          let formaPagamento = values.path[1][1].value
@@ -174,6 +173,9 @@ user = await verificarUsuarioLogadoAsync();
         values.path[1][3].readOnly = true
         alert('Os dados foram salvos com Sucesso!!')
     }
+})()
+  
 
     // Para trabalhar no select mais pra frente
- })()
+ 
+  
