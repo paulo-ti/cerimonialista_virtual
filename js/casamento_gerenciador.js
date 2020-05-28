@@ -81,8 +81,7 @@ var idEventoGlobal;
     let x = 0
     while(obj.length > x){
       if(typeof obj[x] === "object")
-      
-      itensCheckList = itensCheckList.concat(obj[x])
+        itensCheckList = itensCheckList.concat(obj[x])
       x++;
     }
    call($divschecklist)
