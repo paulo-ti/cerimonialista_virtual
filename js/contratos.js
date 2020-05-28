@@ -1,37 +1,26 @@
 (async function() {
+  
   let $btnContratosSalvar = document.getElementById("btnContratosSalvar");
   let $listaContratos = document.getElementById("listaContratos");
   let $contratosList = document.getElementsByClassName("contratosList");
 
   const refStorage = firebase.storage().ref('arquivos/contratos');
-
+  
   let url_atual1 = window.location.href.split('?')
   let idEvento = url_atual1[1];
-
-  const refContratos = firebase.database().ref("EventoNovo"+"/"+idEvento).child("Contratos").once('value').then(function(snapshot){
-    console.log(snapshot.val());
+  deletarArquivoStorage("7FA133E4.tmp_")
+  const refContratos = firebase.database().ref("EventoNovo"+"/"+idEvento).child("Contratos");
+  refContratos.once('value').then(function(snapshot){
     var arrayKeys = Object.keys(snapshot.val());
-    console.log(arrayKeys)
-    console.log(arrayKeys.values)
-
+    
     for(let i = 0; i < arrayKeys.length ; i++){
-      console.log(snapshot.child(arrayKeys[i]).val().nomeContrato)
       var nomeCompletoContrato = snapshot.child(arrayKeys[i]).val().nomeContrato;
-      console.log(nomeCompletoContrato)
 
       refStorage.child(idEvento+'/'+nomeCompletoContrato).getMetadata().then(function(snapshot){
-        console.log(snapshot)
-        console.log(snapshot.customMetadata.nome)
         var nome = snapshot.customMetadata.nome;
         var descricao = snapshot.customMetadata.descricao;
 
         refStorage.child(idEvento+'/'+snapshot.name).getDownloadURL().then(function(snapshot){
-          console.log(snapshot)
-          var objContrato = new Object();
-          objContrato.nome = nome;
-          objContrato.descricao = descricao;
-          objContrato.url = snapshot;
-          console.log(objContrato)
           if(descricao == '')
             adicionarContratoHTML(nome, nome, snapshot)
           else
@@ -40,6 +29,7 @@
       })
     }
   });
+
 
   $btnContratosSalvar.addEventListener("click", function (e) {
     e.stopImmediatePropagation()
@@ -67,9 +57,7 @@
         console.log(snapshot)
         refStorageContrato.getDownloadURL().then(function(url){
           adicionarContratoHTML2(contrato, nomeContrato, url)
-          listReloader2()
         })
-        //adicionarContratoHTML(contrato, nomeContrato)
       })
       
       
@@ -77,6 +65,8 @@
         alert("Erro ao enviar o arquivo");
         console.log(err);
     })
+    listReloader2()
+
   });
 
   function listReloader2() {
@@ -88,6 +78,15 @@
         }
       });
     });
+  }
+
+  function deletarArquivoStorage(nomeArquivo){
+    refStorage.child(idEvento+'/'+nomeArquivo).delete().then(function(){
+      console.log(nomeArquivo+" deletado com sucesso")
+    }).catch(error=>{
+      console.log(Erro+error)
+    })
+    
   }
 
   function adicionarContratoHTML(nome, descricao, url){
