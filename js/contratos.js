@@ -8,7 +8,7 @@
   
   let url_atual1 = window.location.href.split('?')
   let idEvento = url_atual1[1];
-  deletarArquivoStorage("7FA133E4.tmp_")
+  
   const refContratos = firebase.database().ref("EventoNovo"+"/"+idEvento).child("Contratos");
   refContratos.once('value').then(function(snapshot){
     var arrayKeys = Object.keys(snapshot.val());
@@ -83,10 +83,14 @@
   function deletarArquivoStorage(nomeArquivo){
     refStorage.child(idEvento+'/'+nomeArquivo).delete().then(function(){
       console.log(nomeArquivo+" deletado com sucesso")
+      removerArquivoDoHTML()
     }).catch(error=>{
       console.log(Erro+error)
     })
     
+  }
+  function removerArquivoDoHTML(){
+
   }
 
   function adicionarContratoHTML(nome, descricao, url){
