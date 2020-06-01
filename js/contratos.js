@@ -137,32 +137,33 @@
     td.classList.add("text-center");
     th.innerText = nome;
     link.href = url;
+    link.target = "_blank";
     link.textContent = descricao;
     listReloader2();
   }
 
-  function adicionarContratoHTML2(nome, descricao, url) {
+  // function adicionarContratoHTML2(nome, descricao, url) {
     
-    let tr = document.createElement("tr");
-    let th = document.createElement("th");
-    let td = document.createElement("td");
-    //let URL = document.createElement("td");
-    let link = document.createElement("a");
-    let downloadIcon = document.createElement("i");
-    $listaContratos.appendChild(tr);
-    tr.appendChild(th);
-    tr.appendChild(td);
-    td.appendChild(link);
-    //URL.appendChild(link);
-    //link.appendChild(downloadIcon);
-    th.classList.add("textTable");
-    tr.classList.add("contratosList");
-    td.classList.add("text-center");
-    th.innerText = nome;
-    link.href = url;
-    link.textContent = descricao;
-    listReloader2();
-  }
+  //   let tr = document.createElement("tr");
+  //   let th = document.createElement("th");
+  //   let td = document.createElement("td");
+  //   //let URL = document.createElement("td");
+  //   let link = document.createElement("a");
+  //   let downloadIcon = document.createElement("i");
+  //   $listaContratos.appendChild(tr);
+  //   tr.appendChild(th);
+  //   tr.appendChild(td);
+  //   td.appendChild(link);
+  //   //URL.appendChild(link);
+  //   //link.appendChild(downloadIcon);
+  //   th.classList.add("textTable");
+  //   tr.classList.add("contratosList");
+  //   td.classList.add("text-center");
+  //   th.innerText = nome;
+  //   link.href = url;
+  //   link.textContent = descricao;
+  //   listReloader2();
+  // }
 
   // fileInput.onchange = function(event){
   //   let arquivo = event.target.files[0];
