@@ -47,7 +47,7 @@
           <i class="fas fa-people-carry mr-2"></i>Fornecedores
         </a>
         <a class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop" href="duvidas.html">
-          <i class="fas fa-question-circle mr-2"></i>Duvidas
+          <i class="fas fa-question-circle mr-2"></i>Dúvidas
         </a>
         <a onclick="logout()" class="py-2 dropdown-item border-bottom text-roxa font-italic font-weight-bold txtMenuDrop">
           <i class="fas fa-sign-out-alt mr-2"></i>Sair
@@ -85,7 +85,7 @@
             <label class="txtLabel text-roxa">Qual o nome dos noivos?</label>
             <input id="noivo1" type="text" class="form-control mb-2 text-roxa" maxlength="70">
             <input id="noivo2" type="text" class="form-control mb-2 text-roxa" maxlength="70">
-            <label class="txtLabel text-roxa">Qual a data prevista para o Evento?</label>
+            <label for="dataCasamento" class="txtLabel text-roxa">Qual a data prevista para o Evento?</label>
             <input id="dataCasamento" type="date" class="input-group-text mb-2 text-roxa mx-auto" maxlength="70">
             <label class="txtLabel text-roxa">Qual Estado e a Cidade?</label>
             <select id="estado" name="estado" class="input-group-text text-roxa mx-auto mb-2"> 
@@ -96,7 +96,7 @@
               <option value="" disabled selected >Selecione a Cidade</option> 
               <option value="forteleza">Forteleza</option> 
             </select>
-            <label class="txtLabel mt-1 text-roxa">Qual a quantidade de convidados tem em mente?</label>
+            <label for="numeroConvidados" class="txtLabel mt-1 text-roxa">Qual a quantidade de convidados tem em mente?</label>
             <input id="numeroConvidados" type="number" min="10" max="100" class="input-group-text mx-auto mb-2 text-roxa">
             <button id="btnInicioCasamento" class="btn btn-roxa mt-2 btn-lg" type="submit">Vamos nessa!</button>
           </form>
