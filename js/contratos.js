@@ -2,6 +2,9 @@
   let $btnContratosSalvar = document.getElementById("btnContratosSalvar");
   let $listaContratos = document.getElementById("listaContratos");
   let $contratosList = document.getElementsByClassName("contratosList");
+  var $descricaoContrato = document.getElementById("descricaoContrato");
+  var fileInput = document.getElementById("input-file");
+
 
   const refStorage = firebase.storage().ref("arquivos/contratos");
 
@@ -38,9 +41,8 @@
   });
 
   $btnContratosSalvar.addEventListener("click", function (e) {
+    
     e.stopImmediatePropagation();
-    var $descricaoContrato = document.getElementById("descricaoContrato");
-    var fileInput = document.getElementById("input-file");
 
     let descricaoContrato = $descricaoContrato.value;
     var fileContrato = fileInput.files[0].name;
@@ -69,11 +71,10 @@
           .push()
           .set({ nomeContrato: nomeCompletoContrato })
           .then(function () {
-            console.log(snapshot);
             refStorageContrato.getDownloadURL().then(function (url) {
-              adicionarContratoHTML2(contrato, nomeContrato, url);
+              adicionarContratoHTML(contrato.textContent, nomeContrato.textContent, url);
               $descricaoContrato.value = "";
-              $input-file.value = "";
+              fileInput.value = "";
               listReloader2();
             });
           });
@@ -82,23 +83,27 @@
         alert("Erro ao enviar o arquivo");
         console.log(err);
       });
-    $descricaoContrato.value = "";
-    $fileContrato.value = "";
-    listReloader2();
   });
 
   function listReloader2() {
+  
     Array.prototype.forEach.call($contratosList, (contratosList) => {
+      
       contratosList.addEventListener("click", function (e) {
         if (e.target.classList.value === "textTable") {
           $listaContratos.lastElementChild.parentNode.removeChild(this);
-          alert(`O Contrato ${this.textContent} foi removido!`);
+          let nomeFile = this.lastElementChild.textContent
+          let descricao = this.firstElementChild.textContent
+          let nomeCompleto = nomeFile.concat("_"+descricao)
+          alert(`O Contrato ${descricao} foi removido!`);
+          deletarArquivoStorage(nomeCompleto);
         }
       });
     });
   }
 
   function deletarArquivoStorage(nomeArquivo) {
+    
     refStorage
       .child(idEvento + "/" + nomeArquivo)
       .delete()
@@ -110,41 +115,53 @@
         console.log(Erro + error);
       });
   }
-  function removerArquivoDoHTML() {}
+  function removerArquivoDoHTML() {
+    
+  }
 
   function adicionarContratoHTML(nome, descricao, url) {
     let tr = document.createElement("tr");
     let th = document.createElement("th");
     let td = document.createElement("td");
-    let URL = document.createElement("td");
+    //let URL = document.createElement("td");
+    let link = document.createElement("a");
+    let downloadIcon = document.createElement("i");
     $listaContratos.appendChild(tr);
     tr.appendChild(th);
     tr.appendChild(td);
-    tr.appendChild(URL);
+    td.appendChild(link);
+    //URL.appendChild(link);
+    //link.appendChild(downloadIcon);
     th.classList.add("textTable");
     tr.classList.add("contratosList");
     td.classList.add("text-center");
-    td.classList.add("text-center");
     th.innerText = nome;
-    td.innerText = descricao;
+    link.href = url;
+    link.textContent = descricao;
     listReloader2();
   }
 
   function adicionarContratoHTML2(nome, descricao, url) {
+    
     let tr = document.createElement("tr");
     let th = document.createElement("th");
     let td = document.createElement("td");
-    let URL = document.createElement("td");
+    //let URL = document.createElement("td");
+    let link = document.createElement("a");
+    let downloadIcon = document.createElement("i");
     $listaContratos.appendChild(tr);
     tr.appendChild(th);
     tr.appendChild(td);
-    tr.appendChild(URL);
+    td.appendChild(link);
+    //URL.appendChild(link);
+    //link.appendChild(downloadIcon);
     th.classList.add("textTable");
     tr.classList.add("contratosList");
     td.classList.add("text-center");
-    td.classList.add("text-center");
-    th.appendChild(nome);
-    td.appendChild(descricao);
+    th.innerText = nome;
+    link.href = url;
+    link.textContent = descricao;
+    listReloader2();
   }
 
   // fileInput.onchange = function(event){
