@@ -82,51 +82,51 @@
        <!-- ! Menu-->
       <div class="row btn-roxa-opacite text-light py-2">
         <div class="container">
-          <h5 class="font-italic text-center mt-2"> Gerenciador.
-            <a href="#menuGerenciador" class="text-light" data-toggle="collapse">
+          <h5 class="font-italic text-center mt-2">
+            <a href="#menuGerenciador" class="text-light" data-toggle="collapse" style="text-decoration: none; "> Gerenciador
             <i class="ml-2 fas fa-cogs mr-2"></i>
             <i class="mr-2 fas fa-long-arrow-alt-left animated slideOutLeftInfinite"></i>
           </a>
           </h5>
           <h6 id="noivos" class="font-italic text-center mt-2"></h6>
           <div id="menuGerenciador" class="collapse container col-lg-8 text-center">
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#checkList"
+              <button  type="button" data-toggle="collapse" data-target="#checkList"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 CheckList
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Agenda"
+              <button type="button" data-toggle="collapse" data-target="#Agenda"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Agenda
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Contratos"
+              <button type="button" data-toggle="collapse" data-target="#Contratos"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Contratos
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Lista"
+              <button type="button" data-toggle="collapse" data-target="#Lista"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
                 Lista de Convidados
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Playlist"
+              <button type="button" data-toggle="collapse" data-target="#Playlist"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
                 Playlist
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Inspiracoes"
+              <button type="button" data-toggle="collapse" data-target="#Inspiracoes"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Inspirações
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Parceiros"
+              <button type="button" data-toggle="collapse" data-target="#Parceiros"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Parceiros
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Cronograma"
+              <button type="button" data-toggle="collapse" data-target="#Cronograma"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
                 Cronograma
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Financeiro"
+              <button data-toggle="collapse" data-target="#Financeiro"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Financeiro
               </button>
-              <button id="btnCasamento" type="button" data-toggle="collapse" data-target="#Observacoes"
+              <button type="button" data-toggle="collapse" data-target="#Observacoes"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 Observações
               </button>
@@ -137,12 +137,15 @@
 
       <!-- ! Cards -->
       <div class="pt-1 text-center">
-        <div class="col-lg-8 m-auto jumbotron pt-3 btn-roxa-opacite text-light">
+        <div class="col-lg-10 m-auto jumbotron pt-3 btn-roxa-opacite text-light">
 
           <!--! CheckList  -->
           <div class="collapse mt-1 col-lg-8 m-auto" id="checkList">
             <div class="jumbotron pt-4 text-roxa">
-              <h4 class="border-bottom pb-1 mb-2">CheckList</h4>
+              <a type="button" data-toggle="collapse" href="#" data-target="#checkList"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">CheckList</h4>
+              </a>
               <ul class="mt-2 nav flex-column border-bottom pb-2">
                 <li class="nav-item">
                   <button type="button" data-toggle="collapse" data-target="#Fotos"
@@ -516,7 +519,10 @@
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Agenda">
             <div class="jumbotron pt-4 text-roxa">
-              <h4 class="border-bottom pb-1 mb-2">Agenda</h4>
+              <a type="button" data-toggle="collapse" href="#" data-target="#Agenda"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Agenda</h4>
+              </a>
                <div class="jumbotron btn-roxa-opacite p-2 my-2">
                 <div id="janeiro" class="mt-1  divschecklist">
                   <div class="jumbotron bg-warning px-2 py-1 mb-2">
@@ -528,9 +534,12 @@
           </div>
 
 
-          <div class=" mt-1 col-lg-8 m-auto" id="Contratos">
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Contratos">
             <div class="jumbotron pt-4 pb-5 text-roxa">
-              <h4 class="border-bottom pb-1 mb-2">Contratos</h4>
+              <a type="button" data-toggle="collapse" href="#" data-target="#Contratos"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Contratos</h4>
+              </a>
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
                 <div class="jumbotron bg-warning px-0 py-1 mb-2">
                   <div class="col pb-2 mb-3 text-center">
@@ -573,7 +582,10 @@
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Lista">
             <div class="jumbotron pt-4 pb-5 text-roxa">
-              <h4 class="border-bottom pb-1 mb-2">Lista de Convidados</h4>
+              <a type="button" data-toggle="collapse" href="#" data-target="#Lista"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Lista de Convidados</h4>
+              </a>
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
                 <div class="jumbotron bg-warning px-2 py-1 mb-2">
                   <div class="py-3 mb-3">
@@ -611,34 +623,103 @@
             </div>
           </div>
 
-          <div class="collapse mt-1 col-lg-8 m-auto" id="Playlist">
-           <div class="jumbotron pt-4 text-roxa">Playlist</div>
+          <div class=" mt-1 col-lg-8 m-auto" id="Playlist">
+           <div class="jumbotron pt-4 text-roxa">
+            <a type="button" data-toggle="collapse" href="#" data-target="#Playlist"
+            class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+              <h4 class="pb-1 mb-2">Playlist</h4>
+            </a>
+            <div class="jumbotron btn-roxa-opacite p-2 my-2">
+              <div class="jumbotron bg-warning px-0 py-1 mb-2">
+                <div class="col pb-2 mb-3 text-center">
+                    <input id="inputNomeMusica" type="text" size="40" class="col-12 btn mb-2 mt-2 text-roxa text-center" placeholder="Nome da musica">
+                    <input id="inputMomentoMusica" type="text" size="40" class="col-12 btn mb-2 text-roxa text-left text-center" placeholder="Momento da musica">
+                    <input id="inputLinkMusica" type="text" size="40" class="col-12 btn mb-2 text-roxa text-left text-center" placeholder="Link da musica">
+                    <button id="btnSalvarPlaylist" class="mb-2  btn col-12 btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Salvar </button>
+                  </div>
+                  <div class="px-2">
+                    <span class="text-roxa text-center strong" style="font-size: 11px; font-weight: bold;">*Clique no nome da musica que deseja excluir.</span>
+                    <table class="col table pt-0 mt-0  font-italic">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-left pb-1 text-center">Link</th>
+                          <th scope="col" class="pb-1 text-center">Musica</th>
+                          <th scope="col" class="pb-1 text-center">Momento</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-left" id="listaMusicas">
+                        <!-- <tr>
+                          <th class="textTable"><a href="#">#</a></th>
+                          <td  class="text-center">Lua de Cristal Cristal Cristal</td>
+                          <td  class="text-center">Cerimonia</td>
+                        </tr> -->
+                      </table>
+                    </tbody>
+                  </div>
+                  <!-- <div class="form-check">
+                    <label class="mr-5">1 Paulo Lima </label>
+                      <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
+                      <label for="my-input" class="form-check-label">Confirmado</label>
+                  </div> -->
+                  <!-- <ul class="mt-1 ml-3 nav flex-column pb-3 text-center" >
+                    <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                    <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                    <li class="nav-item">Contrato Fotografo <a href="#"> FILE PDF Abrir</a></li>
+                  </ul> -->
+              </div>
+            </div>
+           </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Inspiracoes">
-           <div class="jumbotron pt-4 text-roxa">Inspirações</div>
+            <div class="jumbotron pt-4 text-roxa">
+              <a type="button" data-toggle="collapse" href="#" data-target="#Inspiracoes"
+                class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Inspirações</h4>
+              </a>
+            </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Parceiros">
-           <div class="jumbotron pt-4 text-roxa">Parceiros</div>
+            <div class="jumbotron pt-4 text-roxa">
+              <a type="button" data-toggle="collapse" href="#" data-target="#Parceiros"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+              <h4 class="pb-1 mb-2">Parceiros</h4>
+              </a>
+            </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Cronograma">
-           <div class="jumbotron pt-4 text-roxa">Cronograma</div>
+            <div class="jumbotron pt-4 text-roxa">
+              <a type="button" data-toggle="collapse" href="#" data-target="#Cronograma"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Cronograma</h4>
+              </a>
+            </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Financeiro">
-           <div class="jumbotron pt-4 text-roxa">Financeiro</div>
+            <div class="jumbotron pt-4 text-roxa">
+              <a type="button" data-toggle="collapse" href="#" data-target="#Financeiro"
+                class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Financeiro</h4>
+            </a>
+           </div>
           </div>
 
           <div class="collapse mt-1 col-lg-8 m-auto" id="Observacoes">
-           <div class="jumbotron pt-4 text-roxa">Observações</div>
+           <div class="jumbotron pt-4 text-roxa">
+            <a type="button" data-toggle="collapse" href="#" data-target="#Observacoes"
+              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+              <h4 class="pb-1 mb-2">Observações</h4>
+            </a>
+           </div>
           </div>
         </div>
       </div>
 
   <!-- Footer -->
-  <div id="footer" class="row bg-warning text-center mt-2 px-2 shadow">
+  <div id="footer" class="row bg-warning text-center mt-1 px-2 shadow">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 text-center pt-4 text-roxa">
@@ -680,6 +761,7 @@
   <script src="js/calendario.js"></script>
   <script src="js/lista_convidados.js"></script>
   <script src="js/contratos.js"></script>
+  <script src="js/playlist.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <body>
