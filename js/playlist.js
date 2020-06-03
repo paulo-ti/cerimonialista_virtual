@@ -14,7 +14,9 @@ $btnSalvarPlaylist.addEventListener("click", function () {
   let nomeMusica = $inputNomeMusica.value;
   let momentoMusica = $inputMomentoMusica.value;
   let linkMusica = $inputLinkMusica.value;
-
+  if(linkMusica[0].toLowerCase() != 'h' || linkMusica[1].toLowerCase() != 't' || linkMusica[2].toLowerCase() != 't' || linkMusica[3].toLowerCase() != 'p'){
+    linkMusica = `http://${linkMusica}`
+  }
   montaHTML(nomeMusica , momentoMusica , linkMusica);
   limpaCampos($inputNomeMusica , $inputMomentoMusica , $inputLinkMusica)
   insertBanco(nomeMusica, momentoMusica, linkMusica);
@@ -99,7 +101,7 @@ function montaHTML(musica1 , momento1 , link){
   td2.classList.add("text-center");
   linkIcon.classList.add("fas", "fa-volume-up");
   th.appendChild(a);
-  a.href = "http://" + link;
+  a.href =  link;
   a.target = "_blank";
   a.appendChild(linkIcon);
   td.appendChild(musica);
