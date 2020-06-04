@@ -1,7 +1,6 @@
 var idEventoGlobal;
 (async function() {
   user = await verificarUsuarioLogadoAsync();
-
   let $btnSalvarCheckList = document.getElementsByClassName('btnSalvarCheckList')
   let $btnEditarCheckList = document.getElementsByClassName('btnEditarCheckList')
   let $divschecklist = document.querySelectorAll('.divschecklist')

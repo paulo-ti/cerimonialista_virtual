@@ -7,9 +7,8 @@
 
 
   const refStorage = firebase.storage().ref("arquivos/contratos");
-
   let url_atual1 = window.location.href.split("?");
-  let idEvento = url_atual1[1];
+  var idEvento = url_atual1[1];
 
   const refContratos = firebase
     .database()
@@ -38,6 +37,8 @@
             });
         });
     }
+  }).catch((err) => {
+    console.log(err);
   });
 
   $btnContratosSalvar.addEventListener("click", function (e) {
