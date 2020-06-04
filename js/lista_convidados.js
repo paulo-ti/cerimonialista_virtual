@@ -28,6 +28,17 @@
       montaHTML(nomeConvidado, inputConfirmado, snapshot.key)
     })
   });
+  //Event do checkbox dinâmico
+  document.addEventListener('change',function(e){
+    if(e.target && e.target.id == 'checkbox-convidado'){
+          var id = e.target.parentNode.parentNode.querySelector('.textTable').querySelector('.invisible').textContent;
+          referenciaBanco.child(id).update({confirmado: e.target.checked}).then(function(){
+            console.log('Alterado com sucesso no firebase!')
+          })
+     }
+ });
+
+
 
   function accountantGuests(list) {
     let totalConvidados = list.length;
@@ -69,6 +80,7 @@
       });
     });
   }
+
   function montaHTML(nomeConvidado , confirmado, id){
     let nome = document.createTextNode(nomeConvidado);
     let tr = document.createElement("tr");
@@ -76,7 +88,6 @@
     let td = document.createElement("td");
     let idTd = document.createElement("td");
     let checkbox = document.createElement("input");
-    
     
     idTd.textContent = id;
     $listaConvidados.appendChild(tr);
@@ -89,6 +100,7 @@
     td.classList.add("text-center");
     checkbox.type = "checkbox";
     checkbox.classList.add("checks");
+    checkbox.id = 'checkbox-convidado'
     checkbox.checked = confirmado;
     th.appendChild(nome);
     td.appendChild(checkbox);
