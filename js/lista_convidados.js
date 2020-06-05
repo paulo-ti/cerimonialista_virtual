@@ -11,12 +11,11 @@
   let idEvento = url_atual1[1];
 
   referenciaBanco = firebase.database().ref("EventoNovo"+"/"+idEvento+"/"+"Convidados");
-  referenciaBanco.once("value").then(function(snapshot) {
-    snapshot.forEach(value =>{
-      var confirmado = value.val().confirmado
-      var nomeConvidado = value.val().nomeConvidado
-      montaHTML(nomeConvidado, confirmado, value.key );
-    })
+  referenciaBanco.on("child_added",function(snapshot) {
+    console.log(snapshot.val())
+      var confirmado = snapshot.val().confirmado
+      var nomeConvidado = snapshot.val().nomeConvidado
+      montaHTML(nomeConvidado, confirmado, snapshot.key );
   })
 
   $btnAdicionarConvidados.addEventListener("click", function () {
@@ -24,9 +23,7 @@
     let inputConfirmado = $inputConfirmado.checked;
     referenciaBanco.push().set(
        { nomeConvidado: nomeConvidado, confirmado: inputConfirmado }
-    ).then(function(snapshot){
-      montaHTML(nomeConvidado, inputConfirmado, snapshot.key)
-    })
+    )
   });
   //Event do checkbox dinâmico
   document.addEventListener('change',function(e){
@@ -37,8 +34,6 @@
           })
      }
  });
-
-
 
   function accountantGuests(list) {
     let totalConvidados = list.length;
