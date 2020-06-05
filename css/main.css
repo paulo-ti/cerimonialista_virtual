@@ -4114,3 +4114,9 @@ template {
 .invisible{
   display: none;
 }
+.light-grey{
+  color:#EEEEEE;
+}
+.bold{
+  font-weight: bold;
+}
