@@ -622,7 +622,7 @@
             </div>
           </div>
 
-          <div class=" mt-1 col-lg-8 m-auto" id="Playlist">
+          <div class="collapse mt-1 col-lg-8 m-auto" id="Playlist">
            <div class="jumbotron pt-4 text-roxa">
             <a type="button" data-toggle="collapse" href="#" data-target="#Playlist"
             class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
@@ -706,15 +706,39 @@
            </div>
           </div>
 
-          <div class="collapse mt-1 col-lg-8 m-auto" id="Observacoes">
-           <div class="jumbotron pt-4 text-roxa">
-            <a type="button" data-toggle="collapse" href="#" data-target="#Observacoes"
-              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
-              <h4 class="pb-1 mb-2">Observações</h4>
-            </a>
-           </div>
+          <div class=" mt-1 col-lg-8 m-auto" id="Observacoes">
+            <div class="jumbotron pt-4 text-roxa">
+              <a type="button" data-toggle="collapse" href="#" data-target="#Observacoes"
+                class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
+                <h4 class="pb-1 mb-2">Observações</h4>
+              </a>
+              <div class="jumbotron btn-roxa-opacite p-2 my-2">
+                <div class="jumbotron bg-warning px-0 py-1 mb-2">
+                  <div class="col pb-2 mb-3 text-center">
+                    <textarea id="textObservacao"  class="col-12 btn mb-2 mt-2 text-roxa text-center" cols="10" rows="2"></textarea>
+                      <button id="btnSalvarObservacao" class="mb-2  btn col-12 btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Salvar Observação</button>
+                  </div>
+                  <div class="px-2">
+                    <span class="text-roxa text-center strong" style="font-size: 11px; font-weight: bold;">*Clique na descrição que deseja excluir.</span>
+                    <table class="col table pt-0 mt-0  font-italic">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="pb-1 text-center">Descrição</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-left" id="listaObservacoes">
+                        <!-- <tr>
+                          <th class="textTable"><a href="#">#</a></th>
+                          <td  class="text-center">Lua de Cristal Cristal Cristal</td>
+                          <td  class="text-center">Cerimonia</td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
 
   <!-- Footer -->
@@ -761,6 +785,7 @@
   <script src="js/lista_convidados.js"></script>
   <script src="js/contratos.js"></script>
   <script src="js/playlist.js"></script>
+  <script src="js/observacoes.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <body>
