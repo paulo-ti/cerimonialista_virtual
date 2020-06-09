@@ -1,9 +1,7 @@
 (function () {
   let $btnSalvarObservacao = document.getElementById("btnSalvarObservacao");
   let $textObservacao = document.getElementById("textObservacao");
-  
   let $listaObservacoes = document.getElementById("listaObservacoes");
-
   let $observacoesList = document.getElementsByClassName("observacoesList");
   let url_atual1 = window.location.href.split("?");
   var idEvento = url_atual1[1];
@@ -74,7 +72,6 @@
     $listaObservacoes.appendChild(tr);
     tr.appendChild(th);
     th.appendChild(obs)
-    th.classList.add("text-center");
     tr.classList.add("observacoesList", "text-center");
     th.id = id || ""
   }
