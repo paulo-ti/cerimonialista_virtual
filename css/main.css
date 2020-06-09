@@ -40,6 +40,15 @@ html  {
   margin: auto;
 }
 
+.inputAjuste3 {
+  max-width: 40px;
+  margin: auto;
+}
+
+.colorFinanceiro {
+   background-color: #e9ecef;
+}
+
 .imgAll {
   width: 100%;
 }

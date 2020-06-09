@@ -7,6 +7,10 @@
   background-color: rgba(79, 20, 128, 0.616);
 }
 
+.border-bottomRoxa {
+  border-bottom: 3px solid #8F3FE8 !important;
+}
+
 .text-roxa {
   color: #8F3FE8 !important;
 }
