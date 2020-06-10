@@ -12,7 +12,6 @@
 
   referenciaBanco = firebase.database().ref("EventoNovo"+"/"+idEvento+"/"+"Convidados");
   referenciaBanco.on("child_added",function(snapshot) {
-    console.log(snapshot.val())
       var confirmado = snapshot.val().confirmado
       var nomeConvidado = snapshot.val().nomeConvidado
       montaHTML(nomeConvidado, confirmado, snapshot.key );
