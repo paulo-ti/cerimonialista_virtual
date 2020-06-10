@@ -52,8 +52,6 @@
     consultaFirebase('Bolo',bolo);
     consultaFirebase('Convites',convites);
     consultaFirebase('Bebidas',bebidasAlcoolicas);
-
-    //calcularDebitos('funcaoInvocasda')
     
     function consultaFirebase(child, HTMLElement){
         let fornecedor = HTMLElement.querySelector('.fornecedor th:nth-child(2)');
