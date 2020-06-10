@@ -89,7 +89,7 @@
           </a>
           </h5>
           <h6 id="noivos" class="font-italic text-center mt-2"></h6>
-          <div id="menuGerenciador" class="collapse container col-lg-8 text-center">
+          <div id="menuGerenciador" class="collapse container col-lg-7 text-center">
               <button  type="button" data-toggle="collapse" data-target="#checkList"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
                 CheckList
@@ -109,14 +109,6 @@
               <button type="button" data-toggle="collapse" data-target="#Playlist"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
                 Playlist
-              </button>
-              <button type="button" data-toggle="collapse" data-target="#Inspiracoes"
-              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
-                Inspirações
-              </button>
-              <button type="button" data-toggle="collapse" data-target="#Parceiros"
-              class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop">
-                Parceiros
               </button>
               <button type="button" data-toggle="collapse" data-target="#Cronograma"
               class="mb-1 btn btn-warning text-roxa font-italic font-weight-bold txtMenuDrop ">
@@ -525,7 +517,7 @@
               </a>
                <div class="jumbotron btn-roxa-opacite p-2 my-2">
                 <div id="janeiro" class="mt-1  divschecklist">
-                  <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                  <div class="jumbotron border bg-warning px-2 py-1 mb-2">
                     <div id='calendar'></div>
                   </div>
                 </div>
@@ -541,7 +533,7 @@
                 <h4 class="pb-1 mb-2">Contratos</h4>
               </a>
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
-                <div class="jumbotron bg-warning px-0 py-1 mb-2">
+                <div class="jumbotron border bg-warning px-0 py-1 mb-2">
                   <div class="col pb-2 mb-3 text-center">
                     <input id="input-file" class="my-2 text-roxa col btn" type="file">
                       <input id="descricaoContrato" type="text" size="40" class="col-7 btn mb-2 text-roxa text-left" placeholder="Descrição">
@@ -577,7 +569,7 @@
                 <h4 class="pb-1 mb-2">Lista de Convidados</h4>
               </a>
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
-                <div class="jumbotron bg-warning px-2 py-1 mb-2">
+                <div class="jumbotron border bg-warning px-2 py-1 mb-2">
                   <div class="py-3 mb-1">
                       <input id="inputNomeConvidado" size="50" type="text"  class="btn col-10 mr-2 float-left mb-2 text-roxa border-bottom text-center" placeholder="Nome do Convidado" maxWidth="">
                       <input  id="inputConfirmado" class="float-center mt-3" type="checkbox">
@@ -614,7 +606,7 @@
               <h4 class="pb-1 mb-2">Playlist</h4>
             </a>
             <div class="jumbotron btn-roxa-opacite p-2 my-2">
-              <div class="jumbotron bg-warning px-0 py-1 mb-2">
+              <div class="jumbotron border bg-warning px-0 py-1 mb-2">
                 <div class="col pb-2 mb-3 text-center">
                     <input id="inputNomeMusica" type="text" size="40" class="col-12 btn mb-2 mt-2 text-roxa text-center" placeholder="Nome da musica">
                     <input id="inputMomentoMusica" type="text" size="40" class="col-12 btn mb-2 text-roxa text-left text-center" placeholder="Momento da musica">
@@ -645,42 +637,48 @@
            </div>
           </div>
 
-          <div class="collapse mt-1 col-lg-8 m-auto" id="Inspiracoes">
-            <div class="jumbotron pt-4 text-roxa">
-              <a type="button" data-toggle="collapse" href="#" data-target="#Inspiracoes"
-                class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
-                <h4 class="pb-1 mb-2">Inspirações</h4>
-              </a>
-            </div>
-          </div>
-
-          <div class="collapse mt-1 col-lg-8 m-auto" id="Parceiros">
-            <div class="jumbotron pt-4 text-roxa">
-              <a type="button" data-toggle="collapse" href="#" data-target="#Parceiros"
-              class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
-              <h4 class="pb-1 mb-2">Parceiros</h4>
-              </a>
-            </div>
-          </div>
-
-          <div class="collapse mt-1 col-lg-8 m-auto" id="Cronograma">
+          <div class=" mt-1 col-lg-8 m-auto" id="Cronograma">
             <div class="jumbotron pt-4 text-roxa">
               <a type="button" data-toggle="collapse" href="#" data-target="#Cronograma"
               class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
                 <h4 class="pb-1 mb-2">Cronograma</h4>
               </a>
+              <div class="jumbotron btn-roxa-opacite p-2 my-2">
+                <div class="jumbotron border bg-warning px-0 py-1 mb-2 pt-2">
+                  <div class="mb-3">
+                    <input type="time" class="btn text-roxa col-4 col-lg-2 inputsCronograma">
+                    <input class="btn my-2 text-roxa col-lg-9 col-7 inputsCronograma" 
+                    type="text" placeholder="Descrição">
+                    <button id="btnSendCronograma" class="mb-2  btn col-11 btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Salvar Horário</button>
+                  </div>
+                  <span class="text-roxa text-center strong" style="font-size: 11px; font-weight: bold;">*Clique no horario que deseja excluir.</span>
+                  <table class="col table pt-0 mt-1  font-italic">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="pb-1 text-center">Horário</th>
+                        <th scope="col" class="pb-1 text-center">Descrição</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-left" id="listaCronograma">
+                      <!-- <tr>
+                        <td  class="text-center">11:00</td>
+                        <td  class="text-center">Cerimonia</td>
+                      </tr> -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
 
           
-          <div id="Financeiro" class="colorFinanceiro col-lg-8 mx-auto pb-2 pt-4 mb-4 rounded text-roxa">
+          <div id="Financeiro" class="colorFinanceiro col-lg-8 mx-auto pb-2 pt-4 mb-4 rounded text-roxa collapse">
             <a type="button" data-toggle="collapse" href="#" data-target="#Financeiro"
               class="mb-1 text-roxa font-italic font-weight-bold txtMenuDrop ">
               <h4 class="pb-1 mb-2">Financeiro</h4>
             </a>
             <div class="jumbotron btn-roxa-opacite p-2 my-2">
-              <div class="col bg-warning p-0 m-0 jumbotron border rounded">
-
+              <div class="col border bg-warning p-0 m-0 jumbotron border rounded">
                 <div class="col-lg-12 col-12 mt-2 mb-1 border-bottomRoxa pb-3">
                   <button  type="button" data-toggle="collapse" data-target="#Fotografo1"
                   class="mb-1 btn btn-roxa text-light font-italic font-weight-bold txtMenuDrop">
@@ -712,7 +710,7 @@
                   </button>
                   <button  type="button" data-toggle="collapse" data-target="#Filmagem1"
                   class="mb-1 btn btn-roxa text-light font-italic font-weight-bold txtMenuDrop">
-                    Filmagem
+                  Filmagem
                   </button>
                   <button  type="button" data-toggle="collapse" data-target="#BemCasados1"
                   class="mb-1 btn btn-roxa text-light font-italic font-weight-bold txtMenuDrop">
@@ -994,7 +992,7 @@
                       </tbody>
                     </table>
                   </section>
-                  <section id="Casados1" class="pl-2 my-3 border-bottomRoxa collapse">
+                  <section id="BemCasados1" class="pl-2 my-3 border-bottomRoxa collapse">
                     <table class="table pt-0 mt-0  font-italic">
                       <tbody class="text-left">
                         <tr>
@@ -1156,7 +1154,7 @@
                 <h4 class="pb-1 mb-2">Observações</h4>
               </a>
               <div class="jumbotron btn-roxa-opacite p-2 my-2">
-                <div class="jumbotron bg-warning px-0 py-1 mb-2">
+                <div class="jumbotron border bg-warning px-0 py-1 mb-2">
                   <div class="col pb-2 mb-3 text-center">
                     <textarea id="textObservacao"  class="col-12 btn mb-2 mt-2 text-roxa text-center" cols="10" rows="2" placeholder="Descreva aqui sua observação"></textarea>
                       <button id="btnSalvarObservacao" class="mb-2  btn col-12 btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Salvar Observação</button>
@@ -1229,6 +1227,7 @@
   <script src="js/contratos.js"></script>
   <script src="js/playlist.js"></script>
   <script src="js/observacoes.js"></script>
+  <script src="js/cronograma.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 <body>
