@@ -50,6 +50,7 @@ var user;
         catch(e){
             console.log(e);
         }
+        habilitarBotao()
         return user;
     }
 
@@ -61,6 +62,10 @@ var user;
             })
         })
         .then(snapshot=>snapshot.val())
+    }
+
+    function habilitarBotao(){
+        document.querySelector('#botaoSalvar').disabled = false
     }
 
 })()
