@@ -4129,3 +4129,12 @@ template {
 .bold{
   font-weight: bold;
 }
+.debito th:nth-child(2):before{
+  content: 'R$ ';
+}
+.valorContrato th:nth-child(2):before{
+  content: 'R$ ';
+}
+#totalCusto:before, #totalDebito:before, #totalPago:before{
+  content: 'R$ ';
+}
