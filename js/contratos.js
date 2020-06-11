@@ -35,7 +35,12 @@
               if (descricao == "") adicionarContratoHTML(nome, nome, snapshot);
               else adicionarContratoHTML(descricao, nome, snapshot);
             });
-        });
+        }).catch((err)=>{
+          if(err.code == 'storage/object-not-found'){
+            let key = snapshot.child(arrayKeys[i]).key
+            removerNomeContratoInexistente(key)
+          }
+        })
     }
   }).catch((err) => {
     console.log(err);
@@ -143,39 +148,7 @@
     listReloader2();
   }
 
-  // function adicionarContratoHTML2(nome, descricao, url) {
-    
-  //   let tr = document.createElement("tr");
-  //   let th = document.createElement("th");
-  //   let td = document.createElement("td");
-  //   //let URL = document.createElement("td");
-  //   let link = document.createElement("a");
-  //   let downloadIcon = document.createElement("i");
-  //   $listaContratos.appendChild(tr);
-  //   tr.appendChild(th);
-  //   tr.appendChild(td);
-  //   td.appendChild(link);
-  //   //URL.appendChild(link);
-  //   //link.appendChild(downloadIcon);
-  //   th.classList.add("textTable");
-  //   tr.classList.add("contratosList");
-  //   td.classList.add("text-center");
-  //   th.innerText = nome;
-  //   link.href = url;
-  //   link.textContent = descricao;
-  //   listReloader2();
-  // }
-
-  // fileInput.onchange = function(event){
-  //   let arquivo = event.target.files[0];
-  //   refStorage.child(idEventoGlobal+'/1').put(arquivo, {
-  //       customMetadata:{
-  //           descricao: "desc teste"
-  //       }
-  //   }).then(()=>{
-  //     alert('Arquivo Enviado com Sucesso!');
-  //   }).catch(err =>{
-  //       alert("Erro ao enviar o arquivo" + e);
-  //   })
-  // }
+  function removerNomeContratoInexistente(key){
+      refContratos.child(key).remove()
+  }
 })();
