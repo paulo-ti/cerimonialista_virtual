@@ -4138,3 +4138,12 @@ template {
 #totalCusto:before, #totalDebito:before, #totalPago:before{
   content: 'R$ ';
 }
+.copyright{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.copyright p{
+  display: inline-block;
+  margin: 0, auto;
+}
