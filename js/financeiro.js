@@ -122,8 +122,10 @@
         var debitos = document.querySelectorAll('.debito th:nth-child(2)')
         var somaDebitos = 0;
         for(let i = 0; i < debitos.length; i++){
-            if(!isNaN(debitos[i].textContent))
+            if((!isNaN(debitos[i].textContent)) && debitos[i].textContent != ''){
+                console.log(debitos[i].textContent)
                 somaDebitos += parseInt(debitos[i].textContent)
+            }
         }
         document.querySelector('#totalDebito').textContent = somaDebitos
         return somaDebitos;
