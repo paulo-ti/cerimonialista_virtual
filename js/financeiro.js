@@ -62,7 +62,12 @@
         
         ref.child(child).on('value',snapshot=>{
             fornecedor.textContent = snapshot.val().fornecedor
-            valorContrato.textContent = snapshot.val().valorContrato
+            let valorContratoValue = parseFloat(snapshot.val().valorContrato);
+            if(isNaN(valorContratoValue.toFixed(2)))
+                valorContrato.textContent = '0.00'
+            else
+                valorContrato.textContent = valorContratoValue.toFixed(2)
+
             if(snapshot.val().formaPagamento == 'aVista')
                 quantidadeParcelas.textContent = 'À Vista'
             else
@@ -75,13 +80,13 @@
             let valorParcela = valorContrato.textContent / quantidadeParcelas.textContent.split("").filter(n => (Number(n) || n == 0)).join("");;
             var debitoValor = (valorContrato.textContent - valorParcela * parcelasPagas.textContent).toFixed(2)
             if(isNaN(debitoValor)){
-                debito.textContent = 0
+                debito.textContent = '0.00'
             }else{
                 debito.textContent = debitoValor
             }
             var debitosTotais = calcularDebitos()
             var custoTotal = calcularCusto();
-            var pago = custoTotal - debitosTotais
+            var pago = (custoTotal - debitosTotais).toFixed(2)
             document.querySelector('#totalPago').textContent = pago
         })
     }
@@ -124,10 +129,10 @@
         for(let i = 0; i < debitos.length; i++){
             if((!isNaN(debitos[i].textContent)) && debitos[i].textContent != ''){
                 console.log(debitos[i].textContent)
-                somaDebitos += parseInt(debitos[i].textContent)
+                somaDebitos += parseFloat(debitos[i].textContent)
             }
         }
-        document.querySelector('#totalDebito').textContent = somaDebitos
+        document.querySelector('#totalDebito').textContent = somaDebitos.toFixed(2)
         return somaDebitos;
     }
     function calcularCusto(){
@@ -135,9 +140,9 @@
         var somaCusto = 0;
         for(let i = 0; i < valorContrato.length; i++){
             if(!isNaN(valorContrato[i].textContent) && valorContrato[i].textContent != '')
-                somaCusto += parseInt(valorContrato[i].textContent)
+                somaCusto += parseFloat(valorContrato[i].textContent)
         }
-        document.querySelector('#totalCusto').textContent = somaCusto
+        document.querySelector('#totalCusto').textContent = somaCusto.toFixed(2)
         return somaCusto;
     }
 })()
