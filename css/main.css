@@ -4129,3 +4129,21 @@ template {
 .bold{
   font-weight: bold;
 }
+.debito th:nth-child(2):before{
+  content: 'R$ ';
+}
+.valorContrato th:nth-child(2):before{
+  content: 'R$ ';
+}
+#totalCusto:before, #totalDebito:before, #totalPago:before{
+  content: 'R$ ';
+}
+.copyright{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.copyright p{
+  display: inline-block;
+  margin: 0, auto;
+}
