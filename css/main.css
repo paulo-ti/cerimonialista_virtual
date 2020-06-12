@@ -4147,3 +4147,13 @@ template {
   display: inline-block;
   margin: 0, auto;
 }
+.p-index{
+  font-size: 1.2em;
+}
+#h3-index{
+  font-size: 2em;
+}
+#p-amamos{
+  color: #fdff00;
+  opacity: 0.9;
+}
