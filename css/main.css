@@ -66,6 +66,9 @@ html  {
   font-size: 0.8rem;
 }
 
+.fontAjust {
+  font-size:60px;
+}
 
  ul {  
   list-style: none;
@@ -4156,4 +4159,10 @@ template {
 #p-amamos{
   color: #fdff00;
   opacity: 0.9;
+  font-size: 1.5rem
+}
+
+.p-realizamos {
+  opacity: 0.9;
+  font-size: 1.5rem
 }
