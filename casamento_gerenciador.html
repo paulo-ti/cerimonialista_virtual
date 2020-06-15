@@ -570,6 +570,7 @@
                 <div class="jumbotron border bg-warning px-2 py-1 mb-2">
                   <div class="py-3 mb-1">
                       <input id="inputNomeConvidado" size="50" type="text"  class="btn col-10 mr-2 float-left mb-2 text-roxa border-bottom text-center" placeholder="Nome do Convidado" maxWidth="">
+                      <label for="inputConfirmado">Confirmado?</label>
                       <input  id="inputConfirmado" class="float-center mt-3" type="checkbox">
                       <button type="button" id="btnAdicionarConvidados" class=" mb-1 mr-2 btn btn-block btn-light text-roxa font-italic font-weight-bold txtMenuDrop">Adicionar </button>
                     </div>
@@ -577,11 +578,11 @@
                       Total: <span id="qtdTotal" class="text-warning mr-4"></span>
                       Confirmados: <span id="qtdConfirmados" class="text-warning"></span>
                     </label>
-                    <span class="text-roxa float-left strong pb-1" style="font-size: 11px; font-weight: bold;">*Para excluir um contrato, pressione na descrição do contrato que deseja deletar.</span>
+                    <span class="text-roxa float-left strong pb-1" style="font-size: 11px; font-weight: bold;">*Para remover um convidado, clique em seu respectivo nome.</span>
                     <table class="table pt-0 mt-0  font-italic">
                       <thead>
                         <tr>
-                          <th scope="col" class="text-left pb-1">Nome</th>
+                          <th scope="col" class="text-left pb-1 nome-convidado">Nome</th>
                           <th scope="col" class="pb-2" style="font-size: 0.6rem;">Confirmado?</th>
                         </tr>
                       </thead>
