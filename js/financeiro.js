@@ -128,7 +128,6 @@
         var somaDebitos = 0;
         for(let i = 0; i < debitos.length; i++){
             if((!isNaN(debitos[i].textContent)) && debitos[i].textContent != ''){
-                console.log(debitos[i].textContent)
                 somaDebitos += parseFloat(debitos[i].textContent)
             }
         }
