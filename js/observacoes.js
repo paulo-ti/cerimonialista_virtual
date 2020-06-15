@@ -36,6 +36,7 @@
   function listReloaderList() {
     Array.prototype.forEach.call($observacoesList, (observacoesList) => {
       observacoesList.addEventListener("click", function (e) {
+        if(confirmarRemocao('feminino','observação'))
         if (e.target.tagName === "TH") {
           removeObservacao(this.lastElementChild.id)
           $listaObservacoes.removeChild(this);
@@ -57,9 +58,6 @@
   function removeObservacao(obs){
     referenciaBanco.child(obs)
     .remove()
-    .then(function () {
-      console.log(obs + " deletado com sucesso");
-    })
     .catch((error) => {
       console.log(Erro + error);
     });

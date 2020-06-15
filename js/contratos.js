@@ -96,33 +96,40 @@
     Array.prototype.forEach.call($contratosList, (contratosList) => {
       
       contratosList.addEventListener("click", function (e) {
+        let counter = 0;
         if (e.target.classList.value === "textTable") {
-          $listaContratos.lastElementChild.parentNode.removeChild(this);
-          let nomeFile = this.lastElementChild.textContent
-          let descricao = this.firstElementChild.textContent
-          let nomeCompleto = nomeFile.concat("_"+descricao)
-          alert(`O Contrato ${descricao} foi removido!`);
-          deletarArquivoStorage(nomeCompleto);
-        }
+          if(true){
+            if(confirmarRemocao('masculino','contrato')){
+              counter++
+              let nomeFile = this.lastElementChild.textContent
+              let descricao = this.firstElementChild.textContent
+              let nomeCompleto = nomeFile.concat("_"+descricao)
+              if(nomeFile == descricao){
+                nomeCompleto = nomeFile + '_'
+              }
+              deletarArquivoStorage(nomeCompleto, this, descricao);
+          }
+          }
+      }
       });
     });
   }
 
-  function deletarArquivoStorage(nomeArquivo) {
+  function deletarArquivoStorage(nomeArquivo, referencia, descricao) {
     
     refStorage
       .child(idEvento + "/" + nomeArquivo)
       .delete()
       .then(function () {
-        console.log(nomeArquivo + " deletado com sucesso");
-        removerArquivoDoHTML();
+        removerArquivoDoHTML(referencia, descricao);
       })
       .catch((error) => {
-        console.log(Erro + error);
+        console.log('Erro' + error);
       });
   }
-  function removerArquivoDoHTML() {
-    
+  function removerArquivoDoHTML(referencia, descricao) {
+    $listaContratos.lastElementChild.parentNode.removeChild(referencia);
+    alert(`O Contrato ${descricao} foi removido!`);
   }
 
   function adicionarContratoHTML(nome, descricao, url) {
