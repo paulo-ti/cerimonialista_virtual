@@ -19,11 +19,13 @@
 
   function listenerTable(e) {
     if (e.toElement.classList[0] === "horario") {
-      let remove = cronogramaList.find( (horario) => horario.id === this.lastElementChild.id)
-      cronogramaList.splice(cronogramaList.indexOf(remove),1)
-      removeDB(this.lastElementChild.id);
-      $listaCronograma.removeChild(this.lastElementChild);
-      alert(`Horario removido com sucesso!`);
+      if(confirmarRemocao('feminino','atividade')){
+        let remove = cronogramaList.find( (horario) => horario.id === this.lastElementChild.id)
+        cronogramaList.splice(cronogramaList.indexOf(remove),1)
+        removeDB(this.lastElementChild.id);
+        $listaCronograma.removeChild(this.lastElementChild);
+        alert(`Horario removido com sucesso!`);
+      }
     }
   }
 

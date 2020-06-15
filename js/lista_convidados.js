@@ -20,9 +20,11 @@
   $btnAdicionarConvidados.addEventListener("click", function () {
     let nomeConvidado = $inputNomeConvidado.value;
     let inputConfirmado = $inputConfirmado.checked;
-    referenciaBanco.push().set(
-       { nomeConvidado: nomeConvidado, confirmado: inputConfirmado }
-    )
+    if(nomeConvidado !== ''){
+      referenciaBanco.push().set(
+        { nomeConvidado: nomeConvidado, confirmado: inputConfirmado }
+     )
+    }
   });
   //Event do checkbox dinâmico
   document.addEventListener('change',function(e){
@@ -61,17 +63,18 @@
     Array.prototype.forEach.call($namesList, (nameList) => {
       nameList.addEventListener("click", function (e) {
         if (e.target.classList.value === "textTable") {
-          try{
-            let tdIdConvidado = e.target.parentNode.querySelector('.invisible');
-            let idConvidado = tdIdConvidado.textContent;
-            e.target.removeChild(tdIdConvidado)
-          
-            removeConvidado(idConvidado)
-            $listaConvidados.lastElementChild.parentNode.removeChild(this);
-            alert(`O convidado ${this.textContent} foi removido!`);
-          }catch(err){
-            console.log(err)
-          }       
+          if(confirmarRemocao('masculino','convidado')){
+            try{
+              let tdIdConvidado = e.target.parentNode.querySelector('.invisible');
+              let idConvidado = tdIdConvidado.textContent;
+              e.target.removeChild(tdIdConvidado)
+              removeConvidado(idConvidado)
+              $listaConvidados.lastElementChild.parentNode.removeChild(this);
+              alert(`O convidado ${this.textContent} foi removido!`);
+            }catch(err){
+              console.log(err)
+            }
+          }      
         }
         accountantGuests($checks);
         accountantChecked($checks);

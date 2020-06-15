@@ -42,9 +42,11 @@
     Array.prototype.forEach.call($musicasList, (musicasList) => {
       musicasList.addEventListener("click", function (e) {
         if (e.target.classList.value === "textTable") {
-          $listaMusicas.lastElementChild.parentNode.removeChild(this);
-          removeMusica(e.target.textContent)
-          alert(`A musica ${e.target.textContent} foi removida!`);
+          if(confirmarRemocao('feminino','música')){
+            $listaMusicas.lastElementChild.parentNode.removeChild(this);
+            removeMusica(e.target.textContent)
+            alert(`A musica ${e.target.textContent} foi removida!`);
+          }
         }
       });
     });
@@ -68,7 +70,6 @@
     referenciaBanco.child(musicaSemEspaço)
     .remove()
     .then(function () {
-      console.log(musica + " deletado com sucesso");
     })
     .catch((error) => {
       console.log(Erro + error);
