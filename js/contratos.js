@@ -35,8 +35,8 @@
               if (descricao == "") adicionarContratoHTML(nome, nome, snapshot);
               else adicionarContratoHTML(descricao, nome, snapshot);
             });
-        }).catch((err)=>{
-          if(err.code == 'storage/object-not-found'){
+        }).catch((err) => {
+          if (err.code == 'storage/object-not-found') {
             let key = snapshot.child(arrayKeys[i]).key
             removerNomeContratoInexistente(key)
           }
@@ -47,7 +47,7 @@
   });
 
   $btnContratosSalvar.addEventListener("click", function (e) {
-    
+
     e.stopImmediatePropagation();
 
     let descricaoContrato = $descricaoContrato.value;
@@ -92,37 +92,41 @@
   });
 
   function listReloader2() {
-  
+
     Array.prototype.forEach.call($contratosList, (contratosList) => {
-      
       contratosList.addEventListener("click", function (e) {
+        e.stopImmediatePropagation()
         if (e.target.classList.value === "textTable") {
-          $listaContratos.lastElementChild.parentNode.removeChild(this);
-          let nomeFile = this.lastElementChild.textContent
-          let descricao = this.firstElementChild.textContent
-          let nomeCompleto = nomeFile.concat("_"+descricao)
-          alert(`O Contrato ${descricao} foi removido!`);
-          deletarArquivoStorage(nomeCompleto);
+          if (confirmarRemocao('masculino', 'contrato')) {
+            let nomeFile = this.lastElementChild.textContent
+            let descricao = this.firstElementChild.textContent
+            let nomeCompleto = nomeFile.concat("_" + descricao)
+            if (nomeFile == descricao) {
+              nomeCompleto = nomeFile + '_'
+            }
+            deletarArquivoStorage(nomeCompleto, this, descricao);
+          }
+
         }
       });
     });
   }
 
-  function deletarArquivoStorage(nomeArquivo) {
-    
+  function deletarArquivoStorage(nomeArquivo, referencia, descricao) {
+
     refStorage
       .child(idEvento + "/" + nomeArquivo)
       .delete()
       .then(function () {
-        console.log(nomeArquivo + " deletado com sucesso");
-        removerArquivoDoHTML();
+        removerArquivoDoHTML(referencia, descricao);
       })
       .catch((error) => {
-        console.log(Erro + error);
+        console.log('Erro' + error);
       });
   }
-  function removerArquivoDoHTML() {
-    
+  function removerArquivoDoHTML(referencia, descricao) {
+    $listaContratos.lastElementChild.parentNode.removeChild(referencia);
+    alert(`O Contrato ${descricao} foi removido!`);
   }
 
   function adicionarContratoHTML(nome, descricao, url) {
@@ -148,7 +152,7 @@
     listReloader2();
   }
 
-  function removerNomeContratoInexistente(key){
-      refContratos.child(key).remove()
+  function removerNomeContratoInexistente(key) {
+    refContratos.child(key).remove()
   }
 })();
