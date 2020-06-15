@@ -35,8 +35,8 @@
               if (descricao == "") adicionarContratoHTML(nome, nome, snapshot);
               else adicionarContratoHTML(descricao, nome, snapshot);
             });
-        }).catch((err)=>{
-          if(err.code == 'storage/object-not-found'){
+        }).catch((err) => {
+          if (err.code == 'storage/object-not-found') {
             let key = snapshot.child(arrayKeys[i]).key
             removerNomeContratoInexistente(key)
           }
@@ -47,7 +47,7 @@
   });
 
   $btnContratosSalvar.addEventListener("click", function (e) {
-    
+
     e.stopImmediatePropagation();
 
     let descricaoContrato = $descricaoContrato.value;
@@ -92,31 +92,28 @@
   });
 
   function listReloader2() {
-  
+
     Array.prototype.forEach.call($contratosList, (contratosList) => {
-      
       contratosList.addEventListener("click", function (e) {
-        let counter = 0;
+        e.stopImmediatePropagation()
         if (e.target.classList.value === "textTable") {
-          if(true){
-            if(confirmarRemocao('masculino','contrato')){
-              counter++
-              let nomeFile = this.lastElementChild.textContent
-              let descricao = this.firstElementChild.textContent
-              let nomeCompleto = nomeFile.concat("_"+descricao)
-              if(nomeFile == descricao){
-                nomeCompleto = nomeFile + '_'
-              }
-              deletarArquivoStorage(nomeCompleto, this, descricao);
+          if (confirmarRemocao('masculino', 'contrato')) {
+            let nomeFile = this.lastElementChild.textContent
+            let descricao = this.firstElementChild.textContent
+            let nomeCompleto = nomeFile.concat("_" + descricao)
+            if (nomeFile == descricao) {
+              nomeCompleto = nomeFile + '_'
+            }
+            deletarArquivoStorage(nomeCompleto, this, descricao);
           }
-          }
-      }
+
+        }
       });
     });
   }
 
   function deletarArquivoStorage(nomeArquivo, referencia, descricao) {
-    
+
     refStorage
       .child(idEvento + "/" + nomeArquivo)
       .delete()
@@ -155,7 +152,7 @@
     listReloader2();
   }
 
-  function removerNomeContratoInexistente(key){
-      refContratos.child(key).remove()
+  function removerNomeContratoInexistente(key) {
+    refContratos.child(key).remove()
   }
 })();
