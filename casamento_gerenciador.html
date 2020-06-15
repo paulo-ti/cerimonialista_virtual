@@ -148,17 +148,25 @@
                         <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
                         <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
                           <option value="" disabled selected> Forma de pagamento </option>
-                          <option value="a vista">Pagamento a vista</option>
+                          <option value="a vista">Pagamento à vista</option>
                           <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
                           <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
                           <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
                           <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
                           <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
                         </select>
-                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
                         <input id="dataContrato" type="date"
                         class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                        <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        
                         <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
                         <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
@@ -173,23 +181,31 @@
                   </button>
                   <div id="Igreja" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
-                      <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="a vista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01"> 
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                      <<form method="POST">
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -202,22 +218,30 @@
                   <div id="Celebrante" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -230,22 +254,30 @@
                   <div id="decoracao" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -258,22 +290,30 @@
                   <div id="iluminacao" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
                           <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
                           <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
                           <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
                           <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
                           <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -286,22 +326,30 @@
                   <div id="Buffet" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="a vista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -314,22 +362,30 @@
                   <div id="Trajes" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -342,22 +398,30 @@
                   <div id="Filmagem" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -370,22 +434,30 @@
                   <div id="casados" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -398,22 +470,30 @@
                   <div id="Banda" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -426,22 +506,30 @@
                   <div id="Bolo" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -454,22 +542,30 @@
                   <div id="Convites" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
-                        <option value="1x">Pagamento em 1x</option>
-                        <option value="3x">Pagamento em 3x</option>
-                        <option value="5x">Pagamento em 5x</option>
-                        <option value="8x">Pagamento em 8x</option>
-                        <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList  ">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
+                          <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
+                          <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
+                          <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
+                          <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
+                          <option value="10x">Pagamento em 10x</option>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
                       </form>
                     </div>
                   </div>
@@ -482,23 +578,31 @@
                   <div id="Bebidas" class="mt-1 collapse divschecklist">
                     <div class="jumbotron bg-warning px-2 py-1 mb-2">
                       <form method="POST">
-                      <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
-                      <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
-                        <option value="" disabled selected> Forma de pagamento </option>
-                        <option value="aVista">Pagamento a vista</option>
+                        <input class="input-group-text form-control my-2 text-secondary" type="text" id="idFornecedor" placeholder="Nome do Fornecedor">
+                        <select id="formaPagamento" name="formaPagamento" class="inputAjuste2 text-secondary input-group-text mx-auto mb-2">
+                          <option value="" disabled selected> Forma de pagamento </option>
+                          <option value="a vista">Pagamento à vista</option>
                           <option value="1x">Pagamento em 1x</option>
+                          <option value="2x">Pagamento em 2x</option>
                           <option value="3x">Pagamento em 3x</option>
+                          <option value="4x">Pagamento em 4x</option>
                           <option value="5x">Pagamento em 5x</option>
+                          <option value="6x">Pagamento em 6x</option>
+                          <option value="7x">Pagamento em 7x</option>
                           <option value="8x">Pagamento em 8x</option>
+                          <option value="9x">Pagamento em 9x</option>
                           <option value="10x">Pagamento em 10x</option>
-                      </select>
-                      <input class="inputAjuste2 input-group-text form-control my-2 text-roxa" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
-                      <input id="dataContrato" type="date"
-                      class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
-                      <label class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList">Editar </button>
-                      <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList">Salvar </button>
-                    </form>
+                          <option value="11x">Pagamento em 11x</option>
+                          <option value="12x">Pagamento em 12x</option>
+                        </select>
+                        <input class="inputAjuste2 input-group-text form-control my-2 text-roxa mb-1" type="number" id="idValorContrato" placeholder="Valor do Contrato" lang="en" step="0.01">
+                        <label for="dataContrato" class="border-top text-secondary mt-1  text-center" >Data do Fechamento do Contrato</label>
+                        <input id="dataContrato" type="date"
+                        class="inputAjuste2 input-group-text mb-2 text-secondary border-bottom">
+                        
+                        <button class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnEditarCheckList ">Editar </button>
+                        <button type="button" class="btn-block mb-2 mr-2 btn btn-light text-roxa font-italic font-weight-bold txtMenuDrop btnSalvarCheckList ">Salvar </button>
+                      </form>
                   </div>
                 </div>
                 </li>
