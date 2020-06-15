@@ -62,7 +62,11 @@
       nameList.addEventListener("click", function (e) {
         if (e.target.classList.value === "textTable") {
           try{
-            removeConvidado(e.target.parentNode.querySelector('.invisible').textContent)
+            let tdIdConvidado = e.target.parentNode.querySelector('.invisible');
+            let idConvidado = tdIdConvidado.textContent;
+            e.target.removeChild(tdIdConvidado)
+          
+            removeConvidado(idConvidado)
             $listaConvidados.lastElementChild.parentNode.removeChild(this);
             alert(`O convidado ${this.textContent} foi removido!`);
           }catch(err){
