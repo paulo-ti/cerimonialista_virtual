@@ -84,15 +84,13 @@
             <input id="noivo1" type="text" class="form-control mb-2 text-roxa" maxlength="70">
             <input id="noivo2" type="text" class="form-control mb-2 text-roxa" maxlength="70">
             <label for="dataCasamento" class="txtLabel text-roxa">Qual a data prevista para o Evento?</label>
-            <input id="dataCasamento" type="date" class="input-group-text mb-2 text-roxa mx-auto" maxlength="70">
+            <input id="dataCasamento" min="2020-06-15" type="date" class="input-group-text mb-2 text-roxa mx-auto" maxlength="70">
             <label class="txtLabel text-roxa">Qual Estado e a Cidade?</label>
-            <select id="estado" name="estado" class="input-group-text text-roxa mx-auto mb-2"> 
+            <select id="selectEstado" name="estado" class="input-group-text text-roxa mx-auto mb-2"> 
               <option value="" disabled selected>Selecione o Estado</option> 
-              <option value="ce">Ceará</option> 
             </select>
-            <select id="cidade" name="cidade" class="input-group-text mb-2 text-roxa mx-auto mb-2"> 
+            <select id="selectCidade" name="cidade" class="col input-group-text mb-2 text-roxa mx-auto mb-2" disabled> 
               <option value="" disabled selected >Selecione a Cidade</option> 
-              <option value="fortaleza">Fortaleza</option> 
             </select>
             <label for="numeroConvidados" class="txtLabel mt-1 text-roxa">Qual a quantidade de convidados tem em mente?</label>
             <input id="numeroConvidados" type="number" min="10" max="100" class="input-group-text mx-auto mb-2 text-roxa">
