@@ -68,12 +68,19 @@
             else
                 valorContrato.textContent = valorContratoValue.toFixed(2)
 
-            if(snapshot.val().formaPagamento == 'aVista')
-                quantidadeParcelas.textContent = 'À Vista'
+            if(snapshot.val().formaPagamento == 'a vista')
+                quantidadeParcelas.textContent = '0'
             else
                 quantidadeParcelas.textContent = snapshot.val().formaPagamento;
             if(snapshot.hasChild('parcelasPagas')){
-                parcelasPagas.textContent = snapshot.val().parcelasPagas
+                let parcelasPagasVal = snapshot.val().parcelasPagas
+                if(parcelasPagasVal > parseInt(quantidadeParcelas.textContent)){
+                    let idHTML = valorContrato.parentNode.parentNode.parentNode.parentNode.id
+                    updateParcelas(correspondenteFirebase[idHTML], 0)
+                }              
+                else{
+                    parcelasPagas.textContent = parcelasPagasVal
+                }
             }
             else
                 parcelasPagas.textContent = 0
@@ -101,7 +108,7 @@
                 var parcelasPagasInt = parseInt(parcelasPagasNode.textContent)
                 if(quantidadeParcelasMaxima > parcelasPagasInt){
                     parcelasPagasInt++
-                    updateParcelas(correspondenteFirebase[idHTML],parcelasPagasInt, parcelasPagasNode)
+                    updateParcelas(correspondenteFirebase[idHTML],parcelasPagasInt)
                 }
                 
             })
@@ -115,7 +122,7 @@
                 var parcelasPagasInt = parseInt(parcelasPagasNode.textContent)
                 if(parcelasPagasInt > 0){
                     parcelasPagasInt--
-                    updateParcelas(correspondenteFirebase[idHTML],parcelasPagasInt, parcelasPagasNode)
+                    updateParcelas(correspondenteFirebase[idHTML],parcelasPagasInt)
                 }
             })
         }
