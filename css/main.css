@@ -51,6 +51,7 @@ html  {
 
 .imgAll {
   width: 100%;
+  height: 200%;
 }
 
 .txtMenuDrop {
@@ -4164,5 +4165,5 @@ template {
 
 .p-realizamos {
   opacity: 0.9;
-  font-size: 1.5rem
+  font-size: 1.3rem
 }
